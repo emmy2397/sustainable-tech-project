@@ -3,31 +3,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 body {
-    background-color: darkseagreen;
+    background-color: darkslategray;
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
 
 h1 {
-    color: pink;
+    color: darkslategray;
+    font-size: 5vw;
+    position: relative;
+    top: 10px;
+    left: 5px;
+    margin: 40px 0 0 0;    
 }
 
-/* Home Section */
-#home {
-    width: 100vw; /* viewport widht <- the whole width of your browser screen */
-    height: 95vh; /* viewport height <- 95% of the height of your browser screen */
-    background-image: url("../images/bg.png") ;
-    background-size: cover ;
-} 
-    /* why only 95% of vh and not 100? so that the next part of your page is already visible and the user knows that by scrolling down they will arrive to the next part */
+h2 {
+    font-size: 3vw;
+}
+
+li {
+    list-style: none;
+}
+
 
 nav {
     height: 7vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #8e8e8e;
+    background-color: darkslategray;
     box-shadow: 5px 5px 12px /* 3rd digit is how great is the blur of the shadow */ rgba(0, 0, 0, 0.2);
     padding: 0 200px;
     color: #f6f5f5;
@@ -45,40 +50,94 @@ nav {
 }
 
 #nav-title {
-    font-size: x-large;
+    font-size: 2em;
 }
+
+/* Home Section */
+#home {
+    width: 98,5vw; /* viewport widht <- the whole width of your browser screen */
+    height: 85vh; /* viewport height <- 95% of the height of your browser screen */
+    background-color: darkseagreen;
+
+} 
+    /* why only 95% of vh and not 100? so that the next part of your page is already visible and the user knows that by scrolling down they will arrive to the next part */
 
 #intro-text {
     position: absolute;
-    left: 11%;
+    width: 60vw;
+    left: 40px;
+    top: 20px;
+    font-size: 2vw;
+    color: darkslategray;
+    margin: 0;
+
+}
+
+#intro-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    color: darkslategray;
+    font-size: 1.5em;
+}
+
+.intro-level {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: calc(100% / 4);
+    margin: 10px;
+
+
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+  
+.intro-level > h2 {
+    margin-top: 15px;
+}
+
+.intro-level > ul {
+    margin: 15px 0;
+}
+
+.intro-level > ul > li {
+    padding: 5px 0;
+    font-size: 2vw;
+    text-align: justify;
+}
+
+
+
+/* image */
+#plant {
+    height: 60vh;
+    position: absolute;
+    left: 65%;
     top: 20%;
 }
 
 /* button */
 .my-button {
     cursor: pointer;
-    font-family: Grover-Regular;
     font-size: 24px;
     background-color: transparent;
     border-radius: 6px;
-    border: 2px solid #8e8e8e;
-    color: #8e8e8e;
+    border: 2px solid darkslategray;
+    color: darkslategray;
     padding: 12px 48px;
+    width: 30vw;
+    height: 10vh;
 }
 
 .my-button:hover {
-    background-color: #8e8e8e;
+    background-color: darkslategray;
     color: #f6f5f5;
 }
 
 .my-button:active {
     position: relative;
     top: 1px;
-}
-
-#plant {
-    height: 80vh;
-    position: absolute;
-    left: 33%;
-    top: 10%;
 }
