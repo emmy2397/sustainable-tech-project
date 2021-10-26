@@ -1,7 +1,84 @@
+/* General */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 body {
     background-color: darkseagreen;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
-.h1 {
+h1 {
     color: pink;
+}
+
+/* Home Section */
+#home {
+    width: 100vw; /* viewport widht <- the whole width of your browser screen */
+    height: 95vh; /* viewport height <- 95% of the height of your browser screen */
+    background-image: url("../images/bg.png") ;
+    background-size: cover ;
+} 
+    /* why only 95% of vh and not 100? so that the next part of your page is already visible and the user knows that by scrolling down they will arrive to the next part */
+
+nav {
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #8e8e8e;
+    box-shadow: 5px 5px 12px /* 3rd digit is how great is the blur of the shadow */ rgba(0, 0, 0, 0.2);
+    padding: 0 200px;
+    color: #f6f5f5;
+}
+
+#nav-menu {
+    font-size: large;
+    display: flex;
+    list-style: none;
+}
+
+.nav-link {
+    margin: 0 25px;
+    cursor: pointer;
+}
+
+#nav-title {
+    font-size: x-large;
+}
+
+#intro-text {
+    position: absolute;
+    left: 11%;
+    top: 20%;
+}
+
+/* button */
+.my-button {
+    cursor: pointer;
+    font-family: Grover-Regular;
+    font-size: 24px;
+    background-color: transparent;
+    border-radius: 6px;
+    border: 2px solid #8e8e8e;
+    color: #8e8e8e;
+    padding: 12px 48px;
+}
+
+.my-button:hover {
+    background-color: #8e8e8e;
+    color: #f6f5f5;
+}
+
+.my-button:active {
+    position: relative;
+    top: 1px;
+}
+
+#svg-big {
+    height: 80vh;
+    position: absolute;
+    left: 33%;
+    top: 10%;
 }
