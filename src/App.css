@@ -1,0 +1,20 @@
+.formBox {
+  box-sizing: border-box;
+  border: 1px solid slategrey;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.733);
+}
+
+h1 {
+  font-family: 'Open Sans Light';
+  font-size: x-large;
+  text-indent: 25px;
+  color: slategrey;
+}
+
+.infoText {
+  font-family: 'Open Sans Light';
+  font-size: medium;
+  text-indent: 30px;
+  color: slategrey;
+}
