@@ -103,7 +103,6 @@ nav {
     padding: 15px 0;
     width: 100%;
     color: #d4ed85;
-
 }
 
 .intro-level > p {
@@ -155,12 +154,16 @@ nav {
     border-radius: 5px;
 }
 
-#about-text {
+#about-text > p { 
+    font-size: 25px;
     margin: 0;
     background-color: darkseagreen;
-    padding: 15px 0;
+    padding: 1px 0;
     width: 100%;
-    height: 100%;
-    color: #d4ed85;
+    color: darkslategray;
     text-align: center;
+    font-weight: bolder;
+    letter-spacing: 2rem;
+    text-transform: uppercase;
 }
+
