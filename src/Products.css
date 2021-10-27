@@ -119,3 +119,31 @@ select {
 	position:relative;
 	top:1px;
 }
+
+.reminder30{
+    box-sizing: border-box;
+    display: flex;
+    background-color: #efef;
+    width: 80%;
+    margin-left: 10%;
+    height: 50px;
+    justify-content: center;
+}
+.reminderBox {
+    flex: 1;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.reminderAns {
+    align-self: center;
+}
+
+.reminderBox:hover {
+    cursor: pointer;
+}
+.activeAnswer{
+    background-color: green;
+    color: #efef;
+}

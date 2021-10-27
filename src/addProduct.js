@@ -1,14 +1,21 @@
+import FormNavs from './formNavs';
 import React, {Component} from 'react';
+
 import './App.css';
 
 class AddProduct extends Component {
   state= {
-      type: null,
-      name: null,
-      shop: null,
-      price: null,
-      urgency: null,
-      usage: null,
+        type: null,
+        name: null,
+        shop: null,
+        price: null,
+        urgency: null,
+        usage: null,
+        tab: 1,
+        reminder: false,
+        time: 3000,
+        pickedyes: false,
+        pickedno: false
   }
 
   handleChange = (e) => {
@@ -19,19 +26,83 @@ class AddProduct extends Component {
 
   /*Has to be split in to one Function for step one that leads to step two and than the real 
   handlesubmit like here, adding the product information / displaying the product information*/
-  handleSubmit =(e) => {
-      e.preventDefault();
-      //console.log(this.state);
-      this.props.addProduct(this.state);
+handleSubmit =(e) => {
+    e.preventDefault();
+    //console.log(this.state);
+    this.props.addProduct(this.state);
+    // let emailReminder;
+    // let x = 1;
+    let createEmail = () => {
+        alert(`You got a reminder`)
+        // emailReminder = setInterval(countDown, 1000);
+    }
+/*     let countDown = () => {
+        this.setState(state=>({
+            time : state.time - 1000
+        }))
+        console.log(x++)
+            console.log(this.state.time)
+        if(this.state.time === 0){
+            clearInterval(emailReminder)
+        }
+    } */
+    if(this.state.reminder){
+    setTimeout(createEmail, this.state.time);
+    }
+}
+
+  handleClick = (e) => {
+    let target = e.target.innerText;
+    let setreminder = this.state.reminder;
+    let pickedyes = this.state.pickedyes;
+    let pickedno = this.state.pickedno
+    console.log(target);
+    if(target === "YES"){
+        setreminder = true;
+        pickedyes = true;
+        pickedno = false
+    }
+    else if(target === "NO"){
+        setreminder = false;
+        pickedno = true;
+        pickedyes = false;
+    }
+    this.setState({
+        reminder: setreminder,
+        pickedyes: pickedyes,
+        pickedno: pickedno
+    })
+    
+  }
+  formNavs = (currentStep) => {
+    console.log(currentStep)
+    switch(currentStep){
+        case(1):
+            this.setState({
+                tab : 1
+            })
+        break;
+        case(2):
+            this.setState({
+                tab : 2
+            })
+        break;
+        case(3):
+            this.setState({
+                tab : 3
+            })
+        break;
+        default:
+    }
   }
 
 render() {
     return (
-        <div>
+            <div>
+                <FormNavs formNavs={this.formNavs}/>
              <form onSubmit={this.handleSubmit}>
-                <div class="formBox">
+                <div className="formBox tab1" style={this.state.tab === 1 ? {display : "block"}: {display : "none"}}>
                     <h2>Step 1</h2>
-                
                 
                         <label htmlFor="name">Product type:</label>
                         <input type="text" id="type" onChange={this.handleChange}/>
@@ -45,9 +116,22 @@ render() {
                         <p>Button linking to the next step = missing, but I am afraid to break the "data collection"</p>
                 </div>
                 <br/>
+                <div className="formBox tab1" style={this.state.tab === 2 ? {display : "block"}: {display : "none"}}>
+                    <h2>Step 2</h2>
+                
+                        <label htmlFor="name">Add a 30 day reminder</label>
+                        <div className="reminder30">
+                            <div className={`reminderBox ${this.state.pickedyes ? "activeAnswer" : ""}`} onClick={this.handleClick} value="yes">
+                                <div className="reminderAns">YES</div>
+                            </div>
+                            <div className={`reminderBox ${this.state.pickedno ? "activeAnswer" : ""}`} onClick={this.handleClick} value="no">
+                                <div className="reminderAns" value="no">NO</div>
+                            </div>
+                        </div>
+                </div>
 
-                <div class="formBox">
-                <h2>Step 2</h2>
+                <div className="formBox tab2" style={this.state.tab === 3 ? {display : "block"}: {display: "none"}}>
+                <h2>Step 3</h2>
                     <label htmlFor="name">Price:</label>
                     <input type="number" id="price" onChange={this.handleChange}/>
                     
@@ -71,7 +155,7 @@ render() {
                         <option value="More rarely">More rarely</option>
                     </select>
                     <br/><br/>
-                    <button class="submitButton">Submit</button>
+                    <button className="submitButton">Submit</button>
                 </div>
             </form>
             

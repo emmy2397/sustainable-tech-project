@@ -18,3 +18,32 @@ h1 {
   text-indent: 30px;
   color: slategrey;
 }
+
+.product-layout {
+  position: relative;
+  background:green;
+  display: flex;
+  justify-content: center;
+}
+.form-navs {
+  border: 1px solid;
+  position: absolute;
+  background-color: white;
+  color: #000;
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.previous {
+  left: 10px;
+  transform: translate(50%, -50%);
+}
+.next {
+  right: 10px;
+  transform: translate(-50%, -50%);
+}
+.next, .previous{
+  top: 50%;
+}
