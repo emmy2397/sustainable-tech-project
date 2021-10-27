@@ -20,6 +20,12 @@ h1 {
 
 h2 {
     font-size: 3vw;
+    margin: 0;
+}
+
+h3 {
+    font-size: 2vw;
+    margin: 0;
 }
 
 li {
@@ -108,9 +114,7 @@ nav {
 .intro-level > p {
     margin-top: 0;
     padding: 5px;
-    text-align: center;
-
-    
+    text-align: center;  
 }
 
 
@@ -146,7 +150,7 @@ nav {
     top: 1px;
 }
 
-#how-to {
+#about-text {
     background-color: darkslategray;
     margin: 10px;
     padding: 0px;
@@ -167,3 +171,34 @@ nav {
     text-transform: uppercase;
 }
 
+#how-to {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    width: auto;
+    margin: 10px;
+    border: 2px solid #d4ed85;
+    border-radius: 5px;
+    background: darkseagreen;
+}
+
+.how {
+    width: calc(100% / 2);
+    border: 2px solid darkslategray;
+    border-radius: 5px;
+    background: #f6f5f5;
+    align-self: flex-end;
+    margin: 1px 10px 0 0;
+    color: darkslategray;
+    padding: 10px;
+}
+
+.how > p {
+    margin: 0;
+}
+
+#how-to > h3 {
+    color: pink;
+    margin: 0;
+}
