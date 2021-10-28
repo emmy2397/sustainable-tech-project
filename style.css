@@ -173,8 +173,8 @@ nav {
 
 #how-to {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: flex-end;
     text-align: center;
     width: auto;
     margin: 10px;
@@ -183,22 +183,45 @@ nav {
     background: darkseagreen;
 }
 
-.how {
+.how-to-cont {
+    
+    padding: 1em;
+    border: solid;
+}
+
+#how-step-cont {
     width: calc(100% / 2);
+    background-color: pink;
+    margin: 0 10px 0 0;
+}
+
+.how {
     border: 2px solid darkslategray;
     border-radius: 5px;
     background: #f6f5f5;
-    align-self: flex-end;
-    margin: 1px 10px 0 0;
+    margin: 10px 0 0 0;
     color: darkslategray;
     padding: 10px;
+    
 }
 
 .how > p {
     margin: 0;
 }
 
-#how-to > h3 {
-    color: pink;
-    margin: 0;
+#how-title-cont {
+    background-color: yellowgreen;
+    width: auto;
+    
+    margin: 0 10px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
+.how-title {
+    background-color: pink;
+    width: auto;
+    border: 2px solid orange;
+}
+
