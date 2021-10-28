@@ -102,16 +102,16 @@ render() {
                 <FormNavs formNavs={this.formNavs}/>
              <form onSubmit={this.handleSubmit}>
                 <div className="formBox tab1" style={this.state.tab === 1 ? {display : "block"}: {display : "none"}}>
-                    <h2>Step 1</h2>
+                    <h2>step 1</h2>
                 
-                        <label htmlFor="name">Product type:</label>
-                        <input type="text" id="type" onChange={this.handleChange}/>
+                        <label htmlFor="name">Which kind of product do you want to buy?</label>
+                        <input type="text" id="type" placeholder="Product type" onChange={this.handleChange}/>
                         
                         <label htmlFor="name">Product name:</label>
-                        <input type="text" id="name" onChange={this.handleChange}/>
+                        <input type="text" id="name" placeholder="Product name" onChange={this.handleChange}/>
                         
                         <label htmlFor="name">Link or name of shop (optional):</label>
-                        <input type="text" id="shop" onChange={this.handleChange}/>
+                        <input type="text" id="shop" placeholder="Link or name of shop" onChange={this.handleChange}/>
                         <br/><br/>
                         <p>Button linking to the next step = missing, but I am afraid to break the "data collection"</p>
                 </div>

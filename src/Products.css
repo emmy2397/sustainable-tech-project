@@ -1,12 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 body {
-    font-family: 'Open Sans Light';
+    font-family: 'Poppins', sans-serif;
     background-color: rgba(181, 255, 218, 0.082);
 }
 
 h2 {
     font-size: large;
-    text-decoration: underline;
     text-indent: 10%;
+}
+
+.formBox.tab1 > label {
+    margin: 15px 40px 5px 40px;
+    width: auto;
 }
 
 /*Product display*/
@@ -45,12 +51,42 @@ h2 {
 
 /*Form*/
 
+.productForm.product-layout {
+    background-color: darkslategray;
+}
+
 .productForm {
     font-size:medium;
-    color:slategrey;
+    color:pink;
     padding: 12px 20px;
     margin: 8px 0;
     line-height: 2;
+}
+
+form {
+    background-color: darkseagreen;
+    border: 2px solid #d4ed85;
+    border-radius: 5px;
+    color: darkslategray;
+}
+
+.formBox {
+    background-color: pink;
+    border: none;
+    margin: 0;
+}
+
+.formBox.tab1 > p {
+    padding: 40px;
+}
+
+.next.form-navs {
+    background-color: pink;
+    background-color: darkseagreen;
+    border: 2px solid #d4ed85;
+    border-radius: 5px;
+    color: darkslategray;
+
 }
 
 label {
