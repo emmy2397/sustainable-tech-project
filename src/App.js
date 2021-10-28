@@ -29,19 +29,19 @@ class App extends Component {
     });
   }
 
+
   render() {
     return (
       <div className="AppProduct">    
         <h1>Consumescape Form Prototype</h1>
-        <p class="infoText">Welcome :)</p>
-
-        <div class= "productList">
+        <p className="infoText">Welcome :)</p>
+        <div className= "productList">
           <Products deleteProduct={this.deleteProduct} products={this.state.products}/>
         </div>
 
         <br/><br/>
 
-        <div class="productForm">
+        <div className="productForm product-layout">
           <AddProduct addProduct={this.addProduct}/>
         </div>
         
