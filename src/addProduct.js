@@ -128,17 +128,15 @@ render() {
                     <h2>step 1 - should I buy or should I go?</h2>
                         <p>Your point of view, should I buy this or that or should I just let it be? I'm here to help you in your decision making, but before I can do so, I need you to tell me a little about the product your struggling whether to buy or not. </p>
 
-                        <img src="../plant.svg" alt="a leaf with a smiling face"></img>
-
                         <label htmlFor="name">Which kind of product do you want to buy?</label>
                         <input type="text" id="type" placeholder="Product type" onChange={this.handleChange}/>
                         
-                        <label htmlFor="name">Product name:</label>
+                        <label htmlFor="name">What's it called?</label>
                         <input type="text" id="name" placeholder="Product name" onChange={this.handleChange}/>
                         
-                        <label htmlFor="name">Link or name of shop (optional):</label>
+                        <label htmlFor="name">Tell me where you would buy it, so I can remind you of the store in case you'll forget the place (optional):</label>
                         <input type="text" id="shop" placeholder="Link or name of shop" onChange={this.handleChange}/>
-                        <br/><br/>
+                        
                         <button className="submitButton">Submit</button>
                     </div>
 
@@ -173,13 +171,13 @@ render() {
                     <div className="formBox tab3" style={this.state.tab === 3 ? {display : "block"}: {display : "none"}}>
                         <h2>Step 4</h2>
                     
-                            <label htmlFor="name">Add a 30 day reminder</label>
+                            <label htmlFor="name">Would you like to add a 30 day reminder?</label>
                             <div className="reminder30">
                                 <div className={`reminderBox ${this.state.pickedyes ? "activeAnswer" : ""}`} onClick={this.handleClick} value="yes">
-                                    <div className="reminderAns">YES</div>
+                                    <div className="reminderAns">Yes</div>
                                 </div>
                                 <div className={`reminderBox ${this.state.pickedno ? "activeAnswer" : ""}`} onClick={this.handleClick} value="no">
-                                    <div className="reminderAns" value="no">NO</div>
+                                    <div className="reminderAns" value="no">No</div>
                                 </div>
                             </div>
                             <br/><br/>
