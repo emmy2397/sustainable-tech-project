@@ -128,27 +128,6 @@ form {
     height: 85vh;
 }
 
-.formBox.tab1 {
-    background: none;
-    border: none;
-    width: auto;
-    height: 85vh;
-    padding: 0;
-    margin: 0;
-}
-
-.formBox.tab2 {
-    background: none;
-    border: none;
-    width: auto;
-    height: 85vh;
-    padding: 0;
-    margin: 0;
-}
-
-
-
-
 input {
     display: flex;
     flex-direction: row;
@@ -255,6 +234,66 @@ button {
 	top:1px;
 }
 
+/* page 1 */
+
+.formBox.tab1 {
+    background: none;
+    border: none;
+    width: auto;
+    height: 85vh;
+    padding: 0;
+    margin: 0;
+}
+
+.formBox.tab1 > p {
+    width: 66%;
+}
+
+/* page 2 */
+
+.formBox.tab2 {
+    background: none;
+    border: none;
+    width: auto;
+    height: 85vh;
+    padding: 0;
+    margin: 0;
+}
+
+/* Page 3 */
+
+.formBox.tab3 {
+    background: none;
+    border: none;
+    width: auto;
+    height: 85vh;
+    padding: 0;
+    margin: 0;
+}
+
+/* Page 4 */
+
+.formBox.tab4 {
+    background: none;
+    border: none;
+    width: auto;
+    height: 85vh;
+    padding: 0;
+    margin: 0;
+}
+
+/* Images */
+
+#leaf-smiling {
+    width: 13%;
+    height: auto;
+    position: absolute;
+    top: 10%;
+    right: 23%;
+}
+
+/* reminder */
+
 .reminder30{
     box-sizing: border-box;
     display: flex;
@@ -284,28 +323,6 @@ button {
 .activeAnswer{
     background-color: green;
     color: #efef;
-}
-
-/* Page 3 */
-
-.formBox.tab3 {
-    background: none;
-    border: none;
-    width: auto;
-    height: 85vh;
-    padding: 0;
-    margin: 0;
-}
-
-/* Page 4 */
-
-.formBox.tab4 {
-    background: none;
-    border: none;
-    width: auto;
-    height: 85vh;
-    padding: 0;
-    margin: 0;
 }
 
 /*Footer*/
