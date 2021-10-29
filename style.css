@@ -19,7 +19,8 @@ h1 {
 }
 
 h2 {
-    font-size: 3vw;
+    color: darkslategray;
+    font-size: 4vw;
     margin: 0;
 }
 
@@ -30,6 +31,10 @@ h3 {
 
 li {
     list-style: none;
+}
+
+p {
+    color: darkslategray;
 }
 
 a {
@@ -305,89 +310,6 @@ footer {
     top: 1px;
 }
 
-/*Contact Form*/
-
-form {
-    background-color: darkseagreen;
-    border: 2px solid #d4ed85;
-    border-radius: 5px;
-    color: darkslategray;
-    width: 65vw;
-    margin: 2% auto 2% auto;
-    height: 85vh;
-}
-
-
-input {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    font-family: 'Poppins', sans-serif;
-    font-size:medium;
-    color:slategrey;
-    padding: 5px 5px;
-    margin: 0% 5% 0 5%;
-    width: 90%;
-    line-height: 1.25;
-    box-sizing:border-box;
-    border: 1px solid slategrey;
-    border-radius: 4px;
-   
-}
-
-input:focus {
-    border: 2px solid #18ab29;
-}
-
-textarea {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    font-family: 'Poppins', sans-serif;
-    font-size:medium;
-    color:slategrey;
-    padding: 5px 5px;
-    margin: 0% 5% 2% 5%;
-    width: 90%;
-    line-height: 1.25;
-    box-sizing:border-box;
-    border: 1px solid slategrey;
-    border-radius: 4px;
-   
-}
-
-textarea:focus {
-    border: 2px solid #18ab29;
-}
-
-button {
-    font-family: 'Poppins', sans-serif;
-}
-
-.submitButton {
-	box-shadow:inset 0px 0px 0px 1px #3dc21b;
-	background:linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
-	background-color:#c75844;
-	border-radius: 5px;
-	border:2px solid #d4ed85;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-size: 17px;
-	padding: 6px 31px;
-    margin: 1% 5% 2% 5%;
-    width: 90%;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
-}
-.submitButton:hover {
-	background:linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
-	background-color:#5cbf2a;
-}
-.submitButton:active {
-	position:relative;
-	top:1px;
-}
 
 /*IFRAME*/
 iframe {
@@ -395,4 +317,11 @@ iframe {
     height: 1100px;
     border: 0;
 
+}
+
+/*Contact Form: Linked to Products.css*/
+#email_form {
+    height: 25%;
+    background-color: rgba(255, 255, 255, 0.35);
+    margin:5%;
 }

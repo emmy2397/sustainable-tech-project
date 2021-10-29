@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css" type="text/css">
+    <link rel="stylesheet" href="../src/Products.css" type="text/css">
     <title>Consumescape Privacy Policy</title>
 </head>
 <body>
@@ -51,27 +52,26 @@
                     return (
                         <form action="https://postmail.invotes.com/send" method="post" id="email_form">
                             <div>
-                                <h3>Contact us!</h3>
-                                    <p>Feel free to leave us feedback and suggest new functions!</p>
-                                    
-                                    <label htmlFor="name">Your e-mail address</label>
-                                    
-                                    <input type="text" id="email" placeholder="Enter your e-mail address" required onChange={""}/>
-                                    
-                                    <label htmlFor="name">Subject</label>
-                                    
-                                    <input type="text" id="subject" placeholder="The subject of your message" required onChange={""}/>
-                                    
-                                    <label htmlFor="name">Your Message</label>
-                                    
-                                    <textarea name="text" placeholder="Message"></textarea>
-                                    
-                                    <input type="hidden" name="access_token" value="tic9kh2ltjs2gqhmq6uio654" /> 
-                                    <input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
-                                    <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />
+                                <p>Feel free to leave us feedback and suggest new functions!</p>
+                                
+                                <label htmlFor="name">Your e-mail address</label>
+                                
+                                <input type="text" id="email" placeholder="Enter your e-mail address" required onChange={""}/>
+                                
+                                <label htmlFor="name">Subject</label>
+                                
+                                <input type="text" id="subject" placeholder="The subject of your message" required onChange={""}/>
+                                
+                                <label htmlFor="name">Your Message</label>
+                                
+                                <textarea name="text" placeholder="Message"></textarea>
+                                
+                                <input type="hidden" name="access_token" value="tic9kh2ltjs2gqhmq6uio654" /> 
+                                <input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
+                                <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />
 
-                                    <br/>
-                                    <button className="submitButton" id="submit_form" type="submit">Send</button>
+                                <br/>
+                                <button className="submitButton" id="submit_form" type="submit">Send</button>
 
                             </div>
                         </form>
