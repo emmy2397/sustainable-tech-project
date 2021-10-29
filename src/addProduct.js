@@ -113,7 +113,9 @@ render() {
              <form onSubmit={this.handleSubmit}>
                 <div className="formBox tab1" style={this.state.tab === 1 ? {display : "block"}: {display : "none"}}>
                     <h2>step 1 - should I buy or should I go?</h2>
-                        <p>Your point of view, should I buy this or that or should I just let it be? I'm here to help you in your decision making, but before I can do so, I need you to tell me a little about the product your struggling whether to buy or not.</p>
+                        <p>Your point of view, should I buy this or that or should I just let it be? I'm here to help you in your decision making, but before I can do so, I need you to tell me a little about the product your struggling whether to buy or not. </p>
+
+                        <img src="../plant.svg" alt="a leaf with a smiling face"></img>
 
                         <label htmlFor="name">Which kind of product do you want to buy?</label>
                         <input type="text" id="type" placeholder="Product type" onChange={this.handleChange}/>
