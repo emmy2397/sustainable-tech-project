@@ -17,7 +17,8 @@ class AddProduct extends Component {
         pickedyes: false,
         pickedno: false,
         client: null,
-        email: null
+        email: null,
+        reminderdate:null
   }
 
   handleChange = (e) => {
@@ -160,6 +161,9 @@ render() {
                             
                             <label htmlFor="name">Please enter your e-mail:</label>
                             <input type="text" id="email" onChange={this.handleChange}/>
+                            <br/>
+                            <label htmlFor="name">When do you want to be reminded?</label>
+                            <input type="date" id="reminderdate" onChange={this.handleChange}/>
                             <br/>
                             <button className="submitButton">Create reminder</button>
                             <br/><br/>
