@@ -133,10 +133,10 @@ render() {
                     </div>
 
                     <div class="formBox tab2" style={this.state.tab ===2 ? {display : "block"}: {display: "none"}}>
-                        <h2>Step 2</h2>
+                        <h2>step 2 - </h2>
                             <label htmlFor="name">Price:</label>
                             <input required type="number" id="price" onChange={this.handleChange}/>
-                            <br/>
+                            
 
                             <label htmlFor="name">Urgency:</label>
                             <select name="urgency" id="urgency" onChange={this.handleChange}>
@@ -146,7 +146,7 @@ render() {
                                 <option value="Moderate">Moderate</option>
                                 <option value="Low">Low</option>
                             </select>
-                            <br/>
+                            
                             <label htmlFor="name">Usage:</label>
                             <select  name="usage" id="usage" onChange={this.handleChange}>
                                 <option value="Not selected">- Not selected -</option>
@@ -157,7 +157,7 @@ render() {
                                 <option value="Monthly">Monthly</option>
                                 <option value="More rarely">More rarely</option>
                             </select>
-                            <br/>
+                            
                             <button class="submitButton">Submit</button>
                     </div>
 
@@ -180,10 +180,10 @@ render() {
                         <h2>Step 5</h2>
 
                             <label htmlFor="name">Please enter your name:</label>
-                            <input type="text" id="client" onChange={this.handleChange}/>
+                            <input type="text" id="client" placeholder="Your name" onChange={this.handleChange}/>
                             
                             <label htmlFor="name">Please enter your e-mail:</label>
-                            <input type="text" id="email" onChange={this.handleChange}/>
+                            <input type="text" id="email" placeholder="Your email" onChange={this.handleChange}/>
                             <br/>
                             <label htmlFor="name">When do you want to be reminded?</label>
                             <input type="date" id="reminderdate" onChange={this.handleChange}/>
