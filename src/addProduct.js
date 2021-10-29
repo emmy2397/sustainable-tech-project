@@ -99,11 +99,22 @@ handleSubmit =(e) => {
 render() {
     return (
             <div>
+
+                <nav>  
+                <div class="nav-title">Consumescape!</div>
+                <ul class="nav-menu">
+                    <li class="nav-link">About</li>
+                    <li class="nav-link">How To</li>
+                    <li class="nav-link">Contact</li>
+                </ul>
+                </nav>
+
                 <FormNavs formNavs={this.formNavs}/>
              <form onSubmit={this.handleSubmit}>
                 <div className="formBox tab1" style={this.state.tab === 1 ? {display : "block"}: {display : "none"}}>
-                    <h2>step 1</h2>
-                
+                    <h2>step 1 - should I buy or should I go?</h2>
+                        <p>Your point of view, should I buy this or that or should I just let it be? I'm here to help you in your decision making, but before I can do so, I need you to tell me a little about the product your struggling whether to buy or not.</p>
+
                         <label htmlFor="name">Which kind of product do you want to buy?</label>
                         <input type="text" id="type" placeholder="Product type" onChange={this.handleChange}/>
                         
@@ -158,6 +169,15 @@ render() {
                     <button className="submitButton">Submit</button>
                 </div>
             </form>
+
+            <footer>
+                <ul>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <span>techlabs bootcamp project 2021, Consumescape</span>
+            </footer>
             
         </div>
           
