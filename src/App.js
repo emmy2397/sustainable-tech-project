@@ -50,13 +50,6 @@ class App extends Component {
         <div className="productForm product-layout">
           <AddProduct addProduct={this.addProduct}/>
         </div>
-<<<<<<< HEAD
-=======
-        
-        {/*These to components are here because I did not get to routing yet*/}
-        {/* <Contact />
-        <Privacy /> */}
->>>>>>> 6ea4cbab9ce4e8775210a5c4f81559f3f4e5e18c
 
         <footer>
           <ul class="linklist">
