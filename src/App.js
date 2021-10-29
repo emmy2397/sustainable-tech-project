@@ -4,11 +4,6 @@ import Products from './Products';
 import AddProduct from './addProduct';
 
 
-
-import Privacy from './Privacy';
-import Contact from './Contact';
-
-
 /*Root component, container component*/
 
 class App extends Component {
