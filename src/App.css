@@ -28,7 +28,7 @@ h1 {
 .form-navs {
   border: 1px solid;
   position: absolute;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.733);
   color: #000;
   text-align: center;
   user-select: none;
