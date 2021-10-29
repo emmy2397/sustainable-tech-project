@@ -153,6 +153,7 @@ input {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    font-family: 'Poppins', sans-serif;
     font-size:medium;
     color:slategrey;
     padding: 5px 5px;
@@ -169,10 +170,35 @@ input:focus {
     border: 2px solid #18ab29;
 }
 
-select {
+textarea {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-family: 'Poppins', sans-serif;
     font-size:medium;
     color:slategrey;
-    padding: 8px 8px;
+    padding: 5px 5px;
+    margin: 0% 5% 2% 5%;
+    width: 90%;
+    line-height: 1.25;
+    box-sizing:border-box;
+    border: 1px solid slategrey;
+    border-radius: 4px;
+   
+}
+
+textarea:focus {
+    border: 2px solid #18ab29;
+}
+
+select {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-family: 'Poppins', sans-serif;
+    font-size:medium;
+    color:slategrey;
+    padding: 5px 5px;
     margin: 0% 5% 2% 5%;
     width: 90%;
     line-height: 1.25;
@@ -182,7 +208,9 @@ select {
     font-family: 'Poppins', sans-serif;
 }
 
-
+button {
+    font-family: 'Poppins', sans-serif;
+}
 
 .submitButton {
 	box-shadow:inset 0px 0px 0px 1px #3dc21b;

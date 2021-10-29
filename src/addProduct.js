@@ -29,8 +29,6 @@ class AddProduct extends Component {
       })
   }
 
-  /*Has to be split in to one Function for step one that leads to step two and than the real 
-  handlesubmit like here, adding the product information / displaying the product information*/
 handleSubmit =(e) => {
     e.preventDefault();
     //console.log(this.state);
@@ -111,22 +109,16 @@ handleSubmit =(e) => {
 
 render() {
     return (
-            <div>
+        <div>
+            <FormNavs formNavs={this.formNavs}/>
 
-                <nav>  
-                <div class="nav-title">Consumescape!</div>
-                <ul class="nav-menu">
-                    <li class="nav-link">About</li>
-                    <li class="nav-link">How To</li>
-                    <li class="nav-link">Contact</li>
-                </ul>
-                </nav>
+            {/*It would be cool if all the first 6 inputs (before the submit-button) would be required. I've only found a simple way for the number/price input*/}
 
-                <FormNavs formNavs={this.formNavs}/>
              <form onSubmit={this.handleSubmit}>
                 <div className="formBox tab1" style={this.state.tab === 1 ? {display : "block"}: {display : "none"}}>
                     <h2>step 1 - should I buy or should I go?</h2>
-                        <p>Your point of view, should I buy this or that or should I just let it be? I'm here to help you in your decision making, but before I can do so, I need you to tell me a little about the product your struggling whether to buy or not. </p>
+                        <p>Your point of view, should I buy this or that or should I just let it be? I'm here to help you in your decision making, but before I can do so, 
+                        I need you to tell me a little about the product your struggling whether to buy or not. </p>
 
                         <label htmlFor="name">Which kind of product do you want to buy?</label>
                         <input type="text" id="type" placeholder="Product type" onChange={this.handleChange}/>
@@ -136,14 +128,15 @@ render() {
                         
                         <label htmlFor="name">Tell me where you would buy it, so I can remind you of the store in case you'll forget the place (optional):</label>
                         <input type="text" id="shop" placeholder="Link or name of shop" onChange={this.handleChange}/>
-                        
-                        <button className="submitButton">Submit</button>
+                        <br/><br/>
+                        {/*No submit button here, because we just want to go to "next", right?*/}
                     </div>
 
                     <div class="formBox tab2" style={this.state.tab ===2 ? {display : "block"}: {display: "none"}}>
                         <h2>Step 2</h2>
                             <label htmlFor="name">Price:</label>
-                            <input type="number" id="price" onChange={this.handleChange}/>
+                            <input required type="number" id="price" onChange={this.handleChange}/>
+                            <br/>
 
                             <label htmlFor="name">Urgency:</label>
                             <select name="urgency" id="urgency" onChange={this.handleChange}>
@@ -155,7 +148,7 @@ render() {
                             </select>
                             <br/>
                             <label htmlFor="name">Usage:</label>
-                            <select name="usage" id="usage" onChange={this.handleChange}>
+                            <select  name="usage" id="usage" onChange={this.handleChange}>
                                 <option value="Not selected">- Not selected -</option>
                                 <option value="Daily">Daily</option>
                                 <option value="Few times per week">Few times per week</option>
@@ -164,7 +157,7 @@ render() {
                                 <option value="Monthly">Monthly</option>
                                 <option value="More rarely">More rarely</option>
                             </select>
-                            <br/><br/>
+                            <br/>
                             <button class="submitButton">Submit</button>
                     </div>
 
@@ -195,26 +188,20 @@ render() {
                             <label htmlFor="name">When do you want to be reminded?</label>
                             <input type="date" id="reminderdate" onChange={this.handleChange}/>
                             <br/>
+                            {/* Unfortunately, it does not work. Source: postmail.invotes.com, functionality: should send email to default mail address
+                            (so not even suitable for our case, where the input mail address should receive an reminder... :/)
+
                             <input type="hidden" name="subject" value={subject} />
                             <input type="hidden" name="access_token" value="tic9kh2ltjs2gqhmq6uio654" />
                             <input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
-                            <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />
+                            <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />*/}
                             
-                            <p><a href="https://postmail.invotes.com/send" className="submitButton">Create reminder</a></p>
+                            
                             <br/><br/>
                     </div>
 
                 </form>
-    
 
-            <footer>
-                <ul>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Terms</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                <span>techlabs bootcamp project 2021, Consumescape</span>
-            </footer>
             
             </div>
           

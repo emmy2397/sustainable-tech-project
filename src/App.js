@@ -1,6 +1,13 @@
 import React, {Component} from 'react';
+
 import Products from './Products';
 import AddProduct from './addProduct';
+
+
+
+import Privacy from './Privacy';
+import Contact from './Contact';
+
 
 /*Root component, container component*/
 
@@ -8,8 +15,6 @@ class App extends Component {
   state = {
     products: [
       {type:'Electronics', name:'Washing machine', shop:'Amazon', price:300, urgency:'High', usage: 'Weekly',id:1},
-      {type:'Electronics', name:'TV', shop:'https://www.otto.de/p/lg-43up81009lr-lcd-led-fernseher-108-cm-43-zoll-4k-ultra-hd-smart-tv-lg-local-contrast-sprachassistenten-hdr10-pro-lg-thinq-inkl-magic-remote-fernbedienung-1386891678/#variationId=1386891679', price:400, urgency:'Moderate', usage: 'Daily', id:2},
-      {type:'Electronics', name:'Computer', shop:'Amazon', price:600, urgency:'Low', usage: 'Few times per week', id:3}
     ]
   }
 
@@ -32,9 +37,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className="AppProduct">    
-        <h1>Consumescape Form Prototype</h1>
-        <p className="infoText">Welcome :)</p>
+      <div className="AppProduct">
+        <nav>  
+          <div class="nav-title">Consumescape!</div>
+            <ul class="nav-menu">
+                <li class="nav-link">About</li>
+                <li class="nav-link">How To</li>
+                <li class="nav-link">Contact</li>
+            </ul>
+          </nav>    
         <div className= "productList">
           <Products deleteProduct={this.deleteProduct} products={this.state.products}/>
         </div>
@@ -45,6 +56,18 @@ class App extends Component {
           <AddProduct addProduct={this.addProduct}/>
         </div>
         
+        {/*These to components are here because I did not get to routing yet*/}
+        <Contact />
+        <Privacy />
+
+        <footer>
+          <ul class="linklist">
+            <li><a href="./Privacy">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <span>techlabs bootcamp project 2021, Consumescape</span>
+        </footer>
       </div>
     )};
 }
