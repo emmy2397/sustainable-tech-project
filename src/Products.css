@@ -140,13 +140,7 @@ form {
     margin: 0;
 }
 
-.next.form-navs {
-    background-color: darkseagreen;
-    border: 2px solid #d4ed85;
-    border-radius: 5px;
-    color: darkslategray;
 
-}
 
 
 input {
@@ -206,6 +200,24 @@ select {
     border: 1px solid slategrey;
     border-radius: 4px;
     font-family: 'Poppins', sans-serif;
+}
+
+/* Buttons */
+
+.next.form-navs {
+    background-color: darkseagreen;
+    border: 2px solid #d4ed85;
+    border-radius: 5px;
+    color: darkslategray;
+
+}
+
+.previous.form-navs {
+    background-color: darkseagreen;
+    border: 2px solid #d4ed85;
+    border-radius: 5px;
+    color: darkslategray;
+
 }
 
 button {
@@ -271,6 +283,17 @@ button {
 /* Page 3 */
 
 .formBox.tab3 {
+    background: none;
+    border: none;
+    width: auto;
+    height: 85vh;
+    padding: 0;
+    margin: 0;
+}
+
+/* Page 4 */
+
+.formBox.tab4 {
     background: none;
     border: none;
     width: auto;
