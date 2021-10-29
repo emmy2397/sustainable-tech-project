@@ -111,18 +111,9 @@ handleSubmit =(e) => {
 
 render() {
     return (
-            <div>
+        <div>
 
-                <nav>  
-                <div class="nav-title">Consumescape!</div>
-                <ul class="nav-menu">
-                    <li class="nav-link">About</li>
-                    <li class="nav-link">How To</li>
-                    <li class="nav-link">Contact</li>
-                </ul>
-                </nav>
-
-                <FormNavs formNavs={this.formNavs}/>
+            <FormNavs formNavs={this.formNavs}/>
              <form onSubmit={this.handleSubmit}>
                 <div className="formBox tab1" style={this.state.tab === 1 ? {display : "block"}: {display : "none"}}>
                     <h2>step 1 - should I buy or should I go?</h2>
@@ -200,7 +191,7 @@ render() {
                             <input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
                             <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />
                             
-                            <p><a href="https://postmail.invotes.com/send" className="submitButton">Create reminder</a></p>
+                            
                             <br/><br/>
                     </div>
 
