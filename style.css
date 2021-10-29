@@ -63,12 +63,20 @@ nav {
     font-size: 2em;
 }
 
+.lightBackground {
+    background-color: darkseagreen;
+}
+
+.longText {
+    margin: 5%;
+}
+
+
 /* Home Section */
 .home {
     width: 98,5vw; /* viewport widht <- the whole width of your browser screen */
     height: 82vh; /* viewport height <- 95% of the height of your browser screen */
     background-color: darkseagreen;
-
 } 
     /* why only 95% of vh and not 100? so that the next part of your page is already visible and the user knows that by scrolling down they will arrive to the next part */
 
@@ -80,7 +88,6 @@ nav {
     font-size: 1.9vw;
     color: darkslategray;
     margin: 0;
-
 }
 
 #intro-cont {
