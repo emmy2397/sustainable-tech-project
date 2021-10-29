@@ -49,6 +49,14 @@ class App extends Component {
           <AddProduct addProduct={this.addProduct}/>
         </div>
         
+        <footer>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <span>techlabs bootcamp project 2021, Consumescape</span>
+        </footer>
       </div>
     )};
 }

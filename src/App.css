@@ -12,6 +12,10 @@ h1 {
   color: slategrey;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .infoText {
   font-family: 'Open Sans Light';
   font-size: medium;
