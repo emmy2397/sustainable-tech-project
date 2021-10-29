@@ -1,7 +1,9 @@
-import FormNavs from './formNavs';
 import React, {Component} from 'react';
+import FormNavs from './formNavs';
 
 import './App.css';
+
+const subject = "Consumescape reminder"
 
 class AddProduct extends Component {
   state= {
@@ -15,7 +17,10 @@ class AddProduct extends Component {
         reminder: false,
         time: 3000,
         pickedyes: false,
-        pickedno: false
+        pickedno: false,
+        client: null,
+        email: null,
+        reminderdate:null
   }
 
   handleChange = (e) => {
@@ -71,9 +76,11 @@ handleSubmit =(e) => {
         reminder: setreminder,
         pickedyes: pickedyes,
         pickedno: pickedno
-    })
+    });
     
   }
+
+  
   formNavs = (currentStep) => {
     console.log(currentStep)
     switch(currentStep){
@@ -92,9 +99,15 @@ handleSubmit =(e) => {
                 tab : 3
             })
         break;
+        case(4):
+            this.setState({
+                tab : 4
+            })
+        break;
         default:
     }
   }
+  
 
 render() {
     return (
@@ -126,61 +139,75 @@ render() {
                         <label htmlFor="name">Link or name of shop (optional):</label>
                         <input type="text" id="shop" placeholder="Link or name of shop" onChange={this.handleChange}/>
                         <br/><br/>
-                </div>
+                        <button className="submitButton">Submit</button>
+                    </div>
 
-                <div className="formBox tab2" style={this.state.tab === 2 ? {display : "block"}: {display: "none"}}>
-                <h2>Step 2</h2>
-                    <label htmlFor="name">Price:</label>
-                    <input type="number" id="price" onChange={this.handleChange}/>
+                    <div class="formBox tab2" style={this.state.tab ===2 ? {display : "block"}: {display: "none"}}>
+                        <h2>Step 2</h2>
+                            <label htmlFor="name">Price:</label>
+                            <input type="number" id="price" onChange={this.handleChange}/>
+
+                            <label htmlFor="name">Urgency:</label>
+                            <select name="urgency" id="urgency" onChange={this.handleChange}>
+                            {/*Both select inputs have a default  value "not selected" because it is not displaying the top option (value) otherwise */}
+                                <option value="Not selected">- Not selected -</option>
+                                <option value="High">High</option>
+                                <option value="Moderate">Moderate</option>
+                                <option value="Low">Low</option>
+                            </select>
+                            <br/>
+                            <label htmlFor="name">Usage:</label>
+                            <select name="usage" id="usage" onChange={this.handleChange}>
+                                <option value="Not selected">- Not selected -</option>
+                                <option value="Daily">Daily</option>
+                                <option value="Few times per week">Few times per week</option>
+                                <option value="Weekly">Weekly</option>
+                                <option value="Every few weeks">Every few weeks</option>
+                                <option value="Monthly">Monthly</option>
+                                <option value="More rarely">More rarely</option>
+                            </select>
+                            <br/><br/>
+                            <button class="submitButton">Submit</button>
+                    </div>
+
+                    <div className="formBox tab3" style={this.state.tab === 3 ? {display : "block"}: {display : "none"}}>
+                        <h2>Step 4</h2>
                     
-                    <label htmlFor="name">Urgency:</label>
-                    <select name="urgency" id="urgency" onChange={this.handleChange}>
-                    {/*Both select inputs have a default  value "not selected" because it is not displaying the top option (value) otherwise */}
-                        <option value="Not selected">- Not selected -</option>
-                        <option value="High">High</option>
-                        <option value="Moderate">Moderate</option>
-                        <option value="Low">Low</option>
-                    </select>
-                    <br/>
-
-                    <label htmlFor="name">Usage:</label>
-                    <select name="usage" id="usage" onChange={this.handleChange}>
-                        <option value="Not selected">- Not selected -</option>
-                        <option value="Daily">Daily</option>
-                        <option value="Few times per week">Few times per week</option>
-                        <option value="Weekly">Weekly</option>
-                        <option value="Every few weeks">Every few weeks</option>
-                        <option value="Monthly">Monthly</option>
-                        <option value="More rarely">More rarely</option>
-                    </select>
-                    <br/><br/>
-                    <button className="submitButton">Submit</button>
-                </div>
-
-                <div className="formBox tab3" style={this.state.tab === 3 ? {display : "block"}: {display : "none"}}>
-                    <h2>Step 4</h2>
-                
-                        <label htmlFor="name">Add a 30 day reminder</label>
-                        <div className="reminder30">
-                            <div className={`reminderBox ${this.state.pickedyes ? "activeAnswer" : ""}`} onClick={this.handleClick} value="yes">
-                                <div className="reminderAns">YES</div>
+                            <label htmlFor="name">Add a 30 day reminder</label>
+                            <div className="reminder30">
+                                <div className={`reminderBox ${this.state.pickedyes ? "activeAnswer" : ""}`} onClick={this.handleClick} value="yes">
+                                    <div className="reminderAns">YES</div>
+                                </div>
+                                <div className={`reminderBox ${this.state.pickedno ? "activeAnswer" : ""}`} onClick={this.handleClick} value="no">
+                                    <div className="reminderAns" value="no">NO</div>
+                                </div>
                             </div>
-                            <div className={`reminderBox ${this.state.pickedno ? "activeAnswer" : ""}`} onClick={this.handleClick} value="no">
-                                <div className="reminderAns" value="no">NO</div>
-                            </div>
-                        </div>
-                        <br/><br/>
-                </div>
+                            <br/><br/>
+                    </div>
 
-                <div className="formBox tab4" style={this.state.tab === 4 ? {display : "block"}: {display : "none"}}>
-                    <h2>Step 5</h2>
-                
-                        <label htmlFor="name">Please enter you e-mail:</label>
-                        <input type="text" id="email" onChange={this.handleChange}/>
-                        <br/><br/>
-                </div>
+                    <div className="formBox tab4" style={this.state.tab === 4 ? {display : "block"}: {display : "none"}}>
+                        <h2>Step 5</h2>
 
-            </form>
+                            <label htmlFor="name">Please enter your name:</label>
+                            <input type="text" id="client" onChange={this.handleChange}/>
+                            
+                            <label htmlFor="name">Please enter your e-mail:</label>
+                            <input type="text" id="email" onChange={this.handleChange}/>
+                            <br/>
+                            <label htmlFor="name">When do you want to be reminded?</label>
+                            <input type="date" id="reminderdate" onChange={this.handleChange}/>
+                            <br/>
+                            <input type="hidden" name="subject" value={subject} />
+                            <input type="hidden" name="access_token" value="tic9kh2ltjs2gqhmq6uio654" />
+                            <input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
+                            <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />
+                            
+                            <p><a href="https://postmail.invotes.com/send" className="submitButton">Create reminder</a></p>
+                            <br/><br/>
+                    </div>
+
+                </form>
+    
 
             <footer>
                 <ul>
@@ -191,10 +218,11 @@ render() {
                 <span>techlabs bootcamp project 2021, Consumescape</span>
             </footer>
             
-        </div>
+            </div>
           
       )
   }
 }
+
 
 export default AddProduct;
