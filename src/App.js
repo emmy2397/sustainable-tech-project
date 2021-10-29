@@ -52,8 +52,8 @@ class App extends Component {
         </div>
         
         {/*These to components are here because I did not get to routing yet*/}
-        <Contact />
-        <Privacy />
+        {/* <Contact />
+        <Privacy /> */}
 
         <footer>
           <ul class="linklist">
