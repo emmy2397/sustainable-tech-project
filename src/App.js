@@ -53,9 +53,9 @@ class App extends Component {
 
         <footer>
           <ul class="linklist">
-            <li><a href="../subpages/Privacy">Privacy</a></li>
+            <li><a href="../subpages/privacy.html">Privacy</a></li>
             <li><a href="#">Terms</a></li>
-            <li><a href="../subpages/Contact">Contact</a></li>
+            <li><a href="../subpages/contact.html">Contact</a></li>
           </ul>
           <span>techlabs bootcamp project 2021, Consumescape</span>
         </footer>
