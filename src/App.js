@@ -34,32 +34,9 @@ class App extends Component {
   render() {
     return (
       <div className="AppProduct">
-        <nav>  
-          <div class="nav-title">Consumescape!</div>
-            <ul class="nav-menu">
-                <li class="nav-link">About</li>
-                <li class="nav-link">How To</li>
-                <li class="nav-link">Contact</li>
-            </ul>
-          </nav>    
-        <div className= "productList">
-          <Products deleteProduct={this.deleteProduct} products={this.state.products}/>
-          
-        </div>
-       
-        <br/><br/>
-
         <div className="productForm product-layout">
           <AddProduct addProduct={this.addProduct}/>
         </div>
-
-        <footer>
-          <ul class="linklist">
-            <li><a href="../subpages/privacy.html">Privacy</a></li>
-            <li><a href="../subpages/contact.html">Contact</a></li>
-          </ul>
-          <span>techlabs bootcamp project 2021, Consumescape</span>
-        </footer>
       </div>
     )};
 }
