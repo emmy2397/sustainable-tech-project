@@ -48,7 +48,7 @@ nav {
     color: #f6f5f5;
 }
 
-#nav-menu {
+.nav-menu {
     font-size: large;
     display: flex;
     list-style: none;
@@ -59,12 +59,12 @@ nav {
     cursor: pointer;
 }
 
-#nav-title {
+.nav-title {
     font-size: 2em;
 }
 
 /* Home Section */
-#home {
+.home {
     width: 98,5vw; /* viewport widht <- the whole width of your browser screen */
     height: 82vh; /* viewport height <- 95% of the height of your browser screen */
     background-color: darkseagreen;

@@ -109,47 +109,30 @@ handleSubmit =(e) => {
 render() {
     return (
             <div>
+
+                <nav>  
+                <div class="nav-title">Consumescape!</div>
+                <ul class="nav-menu">
+                    <li class="nav-link">About</li>
+                    <li class="nav-link">How To</li>
+                    <li class="nav-link">Contact</li>
+                </ul>
+                </nav>
+
                 <FormNavs formNavs={this.formNavs}/>
-                <form onSubmit={this.handleSubmit}>
-                    <div className="formBox tab1" style={this.state.tab === 1 ? {display : "block"}: {display : "none"}}>
-                        <h2>Step 1</h2>
-                    
-                            <label htmlFor="name">Product type:</label>
-                            <input type="text" id="type" onChange={this.handleChange}/>
-                            
-                            <label htmlFor="name">Product name:</label>
-                            <input type="text" id="name" onChange={this.handleChange}/>
-                            
-                            <label htmlFor="name">Link or name of shop (optional):</label>
-                            <input type="text" id="shop" onChange={this.handleChange}/>
-                            <br/><br/>
-                    </div>
+             <form onSubmit={this.handleSubmit}>
+                <div className="formBox tab1" style={this.state.tab === 1 ? {display : "block"}: {display : "none"}}>
+                    <h2>step 1 - should I buy or should I go?</h2>
+                        <p>Your point of view, should I buy this or that or should I just let it be? I'm here to help you in your decision making, but before I can do so, I need you to tell me a little about the product your struggling whether to buy or not.</p>
 
-                    <div className="formBox tab2" style={this.state.tab === 2 ? {display : "block"}: {display: "none"}}>
-                    <h2>Step 2</h2>
-                        <label htmlFor="name">Price:</label>
-                        <input type="number" id="price" onChange={this.handleChange}/>
+                        <label htmlFor="name">Which kind of product do you want to buy?</label>
+                        <input type="text" id="type" placeholder="Product type" onChange={this.handleChange}/>
                         
-                        <label htmlFor="name">Urgency:</label>
-                        <select name="urgency" id="urgency" onChange={this.handleChange}>
-                        {/*Both select inputs have a default  value "not selected" because it is not displaying the top option (value) otherwise */}
-                            <option value="Not selected">- Not selected -</option>
-                            <option value="High">High</option>
-                            <option value="Moderate">Moderate</option>
-                            <option value="Low">Low</option>
-                        </select>
-                        <br/>
-
-                        <label htmlFor="name">Usage:</label>
-                        <select name="usage" id="usage" onChange={this.handleChange}>
-                            <option value="Not selected">- Not selected -</option>
-                            <option value="Daily">Daily</option>
-                            <option value="Few times per week">Few times per week</option>
-                            <option value="Weekly">Weekly</option>
-                            <option value="Every few weeks">Every few weeks</option>
-                            <option value="Monthly">Monthly</option>
-                            <option value="More rarely">More rarely</option>
-                        </select>
+                        <label htmlFor="name">Product name:</label>
+                        <input type="text" id="name" placeholder="Product name" onChange={this.handleChange}/>
+                        
+                        <label htmlFor="name">Link or name of shop (optional):</label>
+                        <input type="text" id="shop" placeholder="Link or name of shop" onChange={this.handleChange}/>
                         <br/><br/>
                         <button className="submitButton">Submit</button>
                     </div>
@@ -183,6 +166,16 @@ render() {
                     </div>
 
                 </form>
+    
+
+            <footer>
+                <ul>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <span>techlabs bootcamp project 2021, Consumescape</span>
+            </footer>
             
             </div>
           

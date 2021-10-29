@@ -1,13 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 body {
-    font-family: 'Open Sans Light';
+    font-family: 'Poppins', sans-serif;
     background-color: rgba(181, 255, 218, 0.082);
 }
 
 h2 {
     font-size: large;
-    text-decoration: underline;
-    text-indent: 10%;
+    text-indent: 5%;
 }
+
+p {
+    padding: 0;
+    margin: 2% 5% 2% 5%;
+}
+
+label {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: auto;
+    line-height: 1.25;
+    margin: 2% 5% 2% 5%;
+  }
+
+a {
+color: #f6f5f5;
+text-decoration: none;
+}
+
 
 /*Product display*/
 
@@ -41,27 +62,75 @@ h2 {
 	top:1px;
 }
 
+/*Nav bar*/
 
+nav {
+    height: 7vh;
+    width: 98.5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(30, 49, 49);
+    box-shadow: 5px 5px 12px /* 3rd digit is how great is the blur of the shadow */ rgba(0, 0, 0, 0.2);
+    padding: 0 ;
+    color: #f6f5f5;
+}
+
+.nav-menu {
+    font-size: large;
+    display: flex;
+    list-style: none;
+}
+
+.nav-link {
+    margin: 0 25px;
+    cursor: pointer;
+}
+
+.nav-title {
+    font-size: 2em;
+    text-indent: 5%;
+}
 
 /*Form*/
 
+.productForm.product-layout {
+    background-color: darkslategray;
+}
+
 .productForm {
     font-size:medium;
-    color:slategrey;
+    color:darkslategray;
     padding: 12px 20px;
     margin: 8px 0;
     line-height: 2;
 }
 
-label {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    text-align: right;
-    width: 400px;
-    line-height: 1.25;
-    margin: 10% 10% 2% 10%;
-  }
+form {
+    background-color: darkseagreen;
+    border: 2px solid #d4ed85;
+    border-radius: 5px;
+    color: darkslategray;
+    width: 65vw;
+    margin: 2% auto 2% auto;
+    
+}
+
+.formBox.tab1 {
+    background: none;
+    border: none;
+    width: auto;
+    height: auto;
+}
+
+.next.form-navs {
+    background-color: darkseagreen;
+    border: 2px solid #d4ed85;
+    border-radius: 5px;
+    color: darkslategray;
+
+}
+
 
 input {
     display: flex;
@@ -70,8 +139,8 @@ input {
     font-size:medium;
     color:slategrey;
     padding: 5px 5px;
-    margin: 0% 10% 2% 10%;
-    width: 80%;
+    margin: 0% 5% 2% 5%;
+    width: 90%;
     line-height: 1.25;
     box-sizing:border-box;
     border: 1px solid slategrey;
@@ -147,3 +216,28 @@ select {
     background-color: green;
     color: #efef;
 }
+
+/*Footer*/
+
+footer {
+    margin-top: 0px;
+    background-color: darkslategray;
+    padding: 0 15px 15px 15px;
+  }
+  
+  footer > ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  footer > ul > li {
+    padding: 0 15px;
+  }
+  
+  footer > span {
+    margin-top: 0px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.9em;
+    color: #f6f5f5;
+  }
