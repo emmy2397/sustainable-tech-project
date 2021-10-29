@@ -3,6 +3,8 @@ import FormNavs from './formNavs';
 
 import './App.css';
 
+const subject = "Consumescape reminder"
+
 class AddProduct extends Component {
   state= {
         type: null,
@@ -193,7 +195,12 @@ render() {
                             <label htmlFor="name">When do you want to be reminded?</label>
                             <input type="date" id="reminderdate" onChange={this.handleChange}/>
                             <br/>
-                            <button className="submitButton">Create reminder</button>
+                            <input type="hidden" name="subject" value={subject} />
+                            <input type="hidden" name="access_token" value="tic9kh2ltjs2gqhmq6uio654" />
+                            <input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
+                            <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />
+                            
+                            <p><a href="https://postmail.invotes.com/send" className="submitButton">Create reminder</a></p>
                             <br/><br/>
                     </div>
 
