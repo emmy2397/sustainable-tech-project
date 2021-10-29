@@ -1,6 +1,13 @@
 import React, {Component} from 'react';
+
 import Products from './Products';
 import AddProduct from './addProduct';
+
+
+
+import Privacy from './Privacy';
+import Contact from './Contact';
+
 
 /*Root component, container component*/
 
@@ -49,9 +56,13 @@ class App extends Component {
           <AddProduct addProduct={this.addProduct}/>
         </div>
         
+        {/*These to components are here because I did not get to routing yet*/}
+        <Contact />
+        <Privacy />
+
         <footer>
-          <ul>
-            <li><a href="privacy.html">Privacy</a></li>
+          <ul class="linklist">
+            <li><a href="./Privacy">Privacy</a></li>
             <li><a href="#">Terms</a></li>
             <li><a href="#">Contact</a></li>
           </ul>

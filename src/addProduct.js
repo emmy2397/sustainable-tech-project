@@ -29,8 +29,6 @@ class AddProduct extends Component {
       })
   }
 
-  /*Has to be split in to one Function for step one that leads to step two and than the real 
-  handlesubmit like here, adding the product information / displaying the product information*/
 handleSubmit =(e) => {
     e.preventDefault();
     //console.log(this.state);
@@ -188,10 +186,13 @@ render() {
                             <label htmlFor="name">When do you want to be reminded?</label>
                             <input type="date" id="reminderdate" onChange={this.handleChange}/>
                             <br/>
+                            {/* Unfortunately, it does not work. Source: postmail.invotes.com, functionality: should send email to default mail address
+                            (so not even suitable for our case, where the input mail address should receive an reminder... :/ )
+
                             <input type="hidden" name="subject" value={subject} />
                             <input type="hidden" name="access_token" value="tic9kh2ltjs2gqhmq6uio654" />
                             <input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
-                            <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />
+                            <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />*/}
                             
                             
                             <br/><br/>
