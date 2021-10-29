@@ -30,6 +30,7 @@ class App extends Component {
   }
 
 
+
   render() {
     return (
       <div className="AppProduct">
@@ -43,8 +44,9 @@ class App extends Component {
           </nav>    
         <div className= "productList">
           <Products deleteProduct={this.deleteProduct} products={this.state.products}/>
+          
         </div>
-
+       
         <br/><br/>
 
         <div className="productForm product-layout">
@@ -54,7 +56,6 @@ class App extends Component {
         <footer>
           <ul class="linklist">
             <li><a href="../subpages/privacy.html">Privacy</a></li>
-            <li><a href="#">Terms</a></li>
             <li><a href="../subpages/contact.html">Contact</a></li>
           </ul>
           <span>techlabs bootcamp project 2021, Consumescape</span>

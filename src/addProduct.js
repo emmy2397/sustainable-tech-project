@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import FormNavs from './formNavs';
 
 import './App.css';
-
-const subject = "Consumescape reminder"
+import plant from './plant-smiling.png';
 
 class AddProduct extends Component {
   state= {
@@ -111,7 +110,6 @@ render() {
     return (
         <div>
             <FormNavs formNavs={this.formNavs}/>
-
             {/*It would be cool if all the first 6 inputs (before the submit-button) would be required. I've only found a simple way for the number/price input*/}
 
              <form onSubmit={this.handleSubmit}>
@@ -119,7 +117,7 @@ render() {
                     <h2>step 1 - should I buy or should I go?</h2>
                         <p>Your point of view, should I buy this or that or should I just let it be? I'm here to help you in your decision making, but before I can do so, 
                         I need you to tell me a little about the product your struggling whether to buy or not. </p>
-
+                        <img src={plant}/>
                         <label htmlFor="name">Which kind of product do you want to buy?</label>
                         <input type="text" id="type" placeholder="Product type" onChange={this.handleChange}/>
                         
