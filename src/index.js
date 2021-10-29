@@ -10,10 +10,6 @@ ReactDOM.render(
     <App />
   </React.StrictMode>,
   document.getElementById('root'),
-  <React.StrictMode>
-        <Contact/>
-    </React.StrictMode>,
-    document.getElementById('contact')
 );
 
  
