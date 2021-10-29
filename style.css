@@ -65,12 +65,19 @@ nav {
 
 .lightBackground {
     background-color: darkseagreen;
+    margin: 0;
 }
 
 .longText {
-    margin: 5%;
+    padding: 5%;
 }
 
+.formBox {
+    box-sizing: border-box;
+    border: 1px solid slategrey;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.733);
+  }
 
 /* Home Section */
 .home {
@@ -137,6 +144,18 @@ nav {
     left: 65%;
     top: 20%;
 }
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.row {
+    display: flex;
+  }
+  
+.column {
+    flex: 33.33%;
+    padding: 6%;
+    text-align: center;
+  }
+
 
 /* button */
 .my-button {
