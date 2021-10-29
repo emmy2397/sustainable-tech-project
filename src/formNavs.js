@@ -27,7 +27,7 @@ class FormNavs extends Component {
     }
 
     get NextButton(){
-        if(this.state.currentStep < 3){
+        if(this.state.currentStep < 4){
             return(
                 <button className = "next form-navs" onClick={this.handleClick} name="next" >
                     next

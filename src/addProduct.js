@@ -113,25 +113,10 @@ render() {
                         <label htmlFor="name">Link or name of shop (optional):</label>
                         <input type="text" id="shop" onChange={this.handleChange}/>
                         <br/><br/>
-                        <p>Button linking to the next step = missing, but I am afraid to break the "data collection"</p>
-                </div>
-                <br/>
-                <div className="formBox tab1" style={this.state.tab === 2 ? {display : "block"}: {display : "none"}}>
-                    <h2>Step 2</h2>
-                
-                        <label htmlFor="name">Add a 30 day reminder</label>
-                        <div className="reminder30">
-                            <div className={`reminderBox ${this.state.pickedyes ? "activeAnswer" : ""}`} onClick={this.handleClick} value="yes">
-                                <div className="reminderAns">YES</div>
-                            </div>
-                            <div className={`reminderBox ${this.state.pickedno ? "activeAnswer" : ""}`} onClick={this.handleClick} value="no">
-                                <div className="reminderAns" value="no">NO</div>
-                            </div>
-                        </div>
                 </div>
 
-                <div className="formBox tab2" style={this.state.tab === 3 ? {display : "block"}: {display: "none"}}>
-                <h2>Step 3</h2>
+                <div className="formBox tab2" style={this.state.tab === 2 ? {display : "block"}: {display: "none"}}>
+                <h2>Step 2</h2>
                     <label htmlFor="name">Price:</label>
                     <input type="number" id="price" onChange={this.handleChange}/>
                     
@@ -144,6 +129,7 @@ render() {
                         <option value="Low">Low</option>
                     </select>
                     <br/>
+
                     <label htmlFor="name">Usage:</label>
                     <select name="usage" id="usage" onChange={this.handleChange}>
                         <option value="Not selected">- Not selected -</option>
@@ -157,6 +143,30 @@ render() {
                     <br/><br/>
                     <button className="submitButton">Submit</button>
                 </div>
+
+                <div className="formBox tab3" style={this.state.tab === 3 ? {display : "block"}: {display : "none"}}>
+                    <h2>Step 4</h2>
+                
+                        <label htmlFor="name">Add a 30 day reminder</label>
+                        <div className="reminder30">
+                            <div className={`reminderBox ${this.state.pickedyes ? "activeAnswer" : ""}`} onClick={this.handleClick} value="yes">
+                                <div className="reminderAns">YES</div>
+                            </div>
+                            <div className={`reminderBox ${this.state.pickedno ? "activeAnswer" : ""}`} onClick={this.handleClick} value="no">
+                                <div className="reminderAns" value="no">NO</div>
+                            </div>
+                        </div>
+                        <br/><br/>
+                </div>
+
+                <div className="formBox tab4" style={this.state.tab === 4 ? {display : "block"}: {display : "none"}}>
+                    <h2>Step 5</h2>
+                
+                        <label htmlFor="name">Please enter you e-mail:</label>
+                        <input type="text" id="email" onChange={this.handleChange}/>
+                        <br/><br/>
+                </div>
+
             </form>
             
         </div>
