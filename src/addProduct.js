@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import FormNavs from './formNavs';
 // import Email from './email';
 import './App.css';
+import plant from './plant-smiling.png';
 
 import emailjs from 'emailjs-com';
 
@@ -16,7 +17,7 @@ let totalDys = totalHrs / 24;
 //Reassigned totalDys to 2 seconds to get a feedback of the setTimeout fxn
 totalDys = 2000;
 
-import plant from './plant-smiling.png';
+
 
 
 class AddProduct extends Component {
@@ -324,7 +325,7 @@ render(){
                         <label htmlFor="name">Please enter your e-mail:</label>
                         <input type="text" id="email" name="user_email" onChange={this.handleChange}/>
                         <br/>
-                        
+                    </div>    
                         
                            
 
