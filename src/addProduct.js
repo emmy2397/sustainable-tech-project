@@ -108,7 +108,7 @@ handleSubmit =(e) => {
 
 render() {
     return (
-        <div>
+        <div id="div-form">
             <FormNavs formNavs={this.formNavs}/>
             {/*It would be cool if all the first 6 inputs (before the submit-button) would be required. I've only found a simple way for the number/price input*/}
 
@@ -126,7 +126,7 @@ render() {
                         
                         <label htmlFor="name">Tell me where you would buy it, so I can remind you of the store in case you'll forget the place (optional):</label>
                         <input type="text" id="shop" placeholder="Link or name of shop" onChange={this.handleChange}/>
-                        <br/><br/>
+                        
                         {/*No submit button here, because we just want to go to "next", right?*/}
                     </div>
 

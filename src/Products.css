@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
+html {
+    height: 100%
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: rgba(181, 255, 218, 0.082);
+    height: 100%;
+    width: 100%;
 }
 
 h2 {
@@ -103,10 +109,15 @@ nav {
 
 /*Form*/
 
+
+#div-form {
+    height: 50%;
+}
+
 .productForm.product-layout {
-    background-color: darkslategray;
+    background-color: pink;
     width: auto;
-    height: 99vh;
+    height: 50vh;
     margin: 0;
 }
 
@@ -125,7 +136,7 @@ form {
     color: darkslategray;
     width: 65vw;
     margin: 2% auto 2% auto;
-    height: 85vh;
+    height: 100%;
 }
 
 input {
@@ -193,7 +204,7 @@ select {
     border: 2px solid #d4ed85;
     border-radius: 5px;
     color: darkslategray;
-
+    position: absolute;
 }
 
 .previous.form-navs {
@@ -239,7 +250,7 @@ button {
     background: none;
     border: none;
     width: auto;
-    height: 85vh;
+    height: 60%;
     padding: 0;
     margin: 0;
 }
@@ -254,7 +265,7 @@ button {
     background: none;
     border: none;
     width: auto;
-    height: 85vh;
+    height: auto;
     padding: 0;
     margin: 0;
 }
@@ -265,7 +276,7 @@ button {
     background: none;
     border: none;
     width: auto;
-    height: 85vh;
+    height: auto;
     padding: 0;
     margin: 0;
 }
@@ -276,7 +287,7 @@ button {
     background: none;
     border: none;
     width: auto;
-    height: 85vh;
+    height: auto;
     padding: 0;
     margin: 0;
 }
