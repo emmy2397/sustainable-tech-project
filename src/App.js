@@ -34,8 +34,10 @@ class App extends Component {
   render() {
     return (
       <div className="AppProduct">
-        <div className="productForm product-layout">
-          <AddProduct addProduct={this.addProduct}/>
+        <div className="container">        
+          <div className="productForm product-layout">
+            <AddProduct addProduct={this.addProduct}/>
+          </div>
         </div>
       </div>
     )};

@@ -14,6 +14,7 @@ const Products = ({products, deleteProduct}) => {
                 <div>Urgency: {product.urgency}</div>
                 <div>Usage: {product.usage}</div>
                 <div>Name: {product.client}</div>
+                <div>Email Reminder: {product.reminder30 || product.noReminder30}</div>
                 <div>E-mail: {product.email}</div>
                 <div>Reminder date: {product.reminderdate}</div>
                 <button className='deleteButton' onClick={() => {deleteProduct(product.id)}}>Delete product</button>
