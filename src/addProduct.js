@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import FormNavs from './formNavs';
 // import Email from './email';
 import './App.css';
+
 import emailjs from 'emailjs-com';
 
 const subject = "Consumescape reminder"
@@ -14,6 +15,9 @@ let totalDys = totalHrs / 24;
 
 //Reassigned totalDys to 2 seconds to get a feedback of the setTimeout fxn
 totalDys = 2000;
+
+import plant from './plant-smiling.png';
+
 
 class AddProduct extends Component {
   state= {
@@ -238,18 +242,21 @@ handleSubmit =(e) => {
 
 render(){
     return (
+
         <div>
             {/* <Email /> Probably not needed*/}
+
             {/*It would be cool if all the first 6 inputs (before the submit-button) would be required. I've only found a simple way for the number/price input*/}
 
              <form onSubmit={this.handleSubmit}>
             <FormNavs formNavs={this.formNavs} nextBtn={this.nextBtn}/>
 
                 <div className="formBox tab1" style={this.state.tab === 1 ? {display : "block"}: {display : "none"}}>
-                    <h2>step 1 - Product Information</h2>
+
+                        <h2>step 1 - should I buy or should I go?</h2>
                         <p>Your point of view, should I buy this or that or should I just let it be? I'm here to help you in your decision making, but before I can do so, 
                         I need you to tell me a little about the product your struggling whether to buy or not. </p>
-
+                        <img src={plant} alt="picture of a leaf smiling" id="leaf-smiling"/>
                         <label htmlFor="name">Which kind of product do you want to buy?</label>
                         <input type="text" id="type" placeholder="Product type" name="product_type" onChange={this.handleChange} className={`${this.state.fieldOneValidated}`}/>
                         
@@ -257,16 +264,18 @@ render(){
                         <input type="text" id="name" placeholder="Product name" name="product_name" onChange={this.handleChange} className={`${this.state.fieldTwoValidated}`}/>
                         <br/>
                         <label htmlFor="name">Tell me where you would buy it, so I can remind you of the store in case you'll forget the place (optional):</label>
-                        <input type="text" id="shop" placeholder="Link or name of shop" name="product_link" onChange={this.handleChange} className={`${this.state.fieldThreeValidated}`} />
-                        <br/><br/>
+
+                        <input type="text" id="shop" placeholder="Link or name of shop" onChange={this.handleChange} className={`${this.state.fieldThreeValidated}`}/>
+                        
                         {/*No submit button here, because we just want to go to "next", right?*/}
                     </div>
 
-                    <div class="formBox tab2" style={this.state.tab === 2 ? {display : "block"}: {display: "none"}}>
-                        <h2>Step 2: To buy or not to buy?</h2>
+                    <div class="formBox tab2" style={this.state.tab ===2 ? {display : "block"}: {display: "none"}}>
+                        <h2>step 2 - </h2>
+                            <p>Tell me a little more about your product, I'll note it down for you so you have all the facts in one place. Be honest to yourself do you really need this product immediatly and are you going to use it frequently?</p>
                             <label htmlFor="name">Price:</label>
-                            <input required type="number" id="price" name="product_price" onChange={this.handleChange} className={`${this.state.fieldFourValidated}`}/>
-                            <br/>
+                            <input required type="number" id="price" onChange={this.handleChange} className={`${this.state.fieldFourValidated}`}/>
+                            
 
                             <label htmlFor="name">Urgency:</label>
                             <select name="urgency" id="urgency" onChange={this.handleChange}  className={`${this.state.fieldFiveValidated}`}>
@@ -276,7 +285,7 @@ render(){
                                 <option value="Moderate">Moderate</option>
                                 <option value="Low">Low</option>
                             </select>
-                            <br/>
+                            
                             <label htmlFor="name">Usage:</label>
                             <select  name="usage" id="usage" onChange={this.handleChange} className={`${this.state.fieldSixValidated}`}>
                                 <option value="Not selected">- Not selected -</option>
@@ -287,11 +296,14 @@ render(){
                                 <option value="Monthly">Monthly</option>
                                 <option value="More rarely">More rarely</option>
                             </select>
+
                             <br/>
+
                     </div>
 
                     <div className="formBox tab3" style={this.state.tab === 3 ? {display : "block"}: {display : "none"}}>
                         <h2>Step 3</h2>
+
                         <label htmlFor="name">Would you like to add a 30 day reminder?</label>
                         <div name="product_reminder"  className={`reminder30 ${this.state.fieldSevenValidated}`}>
                             <div className={`reminderBox`}>
@@ -314,7 +326,33 @@ render(){
                         <br/>
                         
                         
-                        <button class="submitButton">Submit</button>    
+                           
+
+
+                    <div className="formBox tab4" style={this.state.tab === 4 ? {display : "block"}: {display : "none"}}>
+                        <h2>Step 3 - part 2</h2>
+
+                            <label htmlFor="name">Please enter your name:</label>
+                            <input type="text" id="client" placeholder="Your name" onChange={this.handleChange}/>
+                            
+                            <label htmlFor="name">Please enter your e-mail:</label>
+                            <input type="text" id="email" placeholder="Your email" onChange={this.handleChange}/>
+                            <br/>
+                            <label htmlFor="name">When do you want to be reminded?</label>
+                            <input type="date" id="reminderdate" onChange={this.handleChange}/>
+                            <br/>
+                            {/* Unfortunately, it does not work. Source: postmail.invotes.com, functionality: should send email to default mail address
+                            (so not even suitable for our case, where the input mail address should receive an reminder... :/)
+
+                            <input type="hidden" name="subject" value={subject} />
+                            <input type="hidden" name="access_token" value="tic9kh2ltjs2gqhmq6uio654" />
+                            <input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
+                            <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />*/}
+                            
+                            
+                            <br/><br/>
+                            <button class="submitButton">Submit</button> 
+
                     </div>
                 </form>
             </div>
