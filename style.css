@@ -334,8 +334,15 @@ iframe {
         text-align: center;    
 }
 
+.about-page-h2 {
+    color: darkslategray;
+    font-size: 1.5vw;
+    margin: auto;
+    padding-left: 0.8%
+}
+
 .aboutText {
-    padding: 0 3.5% 2% 3.5%;
+    padding: 0 2.5% 1% 2.5%;
     background-color: #f6f5f5;
     width: 80%;
     margin: auto;
@@ -345,4 +352,9 @@ iframe {
 
 .lightBackground {
     padding: 1.5%;
+}
+
+.aboutText > p {
+    margin: 1%;
+    text-align: justify;
 }
