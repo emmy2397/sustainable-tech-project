@@ -161,8 +161,14 @@ render() {
                     </div>
 
                     <div className="formBox tab3" style={this.state.tab === 3 ? {display : "block"}: {display : "none"}}>
-                        <h2>Step 4</h2>
-                    
+                        <h2>Step 3</h2>
+
+                            {/*p>Your Input:
+                            <br/>
+                            {this.props.name}
+                            </p>
+                            */}
+
                             <label htmlFor="name">Would you like to add a 30 day reminder?</label>
                             <div className="reminder30">
                                 <div className={`reminderBox ${this.state.pickedyes ? "activeAnswer" : ""}`} onClick={this.handleClick} value="yes">
@@ -176,7 +182,7 @@ render() {
                     </div>
 
                     <div className="formBox tab4" style={this.state.tab === 4 ? {display : "block"}: {display : "none"}}>
-                        <h2>Step 5</h2>
+                        <h2>Step 3 - part 2</h2>
 
                             <label htmlFor="name">Please enter your name:</label>
                             <input type="text" id="client" placeholder="Your name" onChange={this.handleChange}/>
