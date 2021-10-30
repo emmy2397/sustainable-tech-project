@@ -49,12 +49,12 @@ nav {
     align-items: center;
     background-color: darkslategray;
     box-shadow: 5px 5px 12px /* 3rd digit is how great is the blur of the shadow */ rgba(0, 0, 0, 0.2);
-    padding: 0 200px;
+    padding: 0 3.5%;
     color: #f6f5f5;
 }
 
 .nav-menu {
-    font-size: large;
+    font-size: 1.5vw;
     display: flex;
     list-style: none;
 }
@@ -65,7 +65,7 @@ nav {
 }
 
 .nav-title {
-    font-size: 2em;
+    font-size: 2vw;
 }
 
 .lightBackground {
@@ -324,4 +324,25 @@ iframe {
     height: 25%;
     background-color: rgba(255, 255, 255, 0.35);
     margin:5%;
+}
+
+/* About Page */
+.about-page-h1 {
+        color: darkslategray;
+        font-size: 2.5vw;
+        margin: 0 0 0 0;
+        text-align: center;    
+}
+
+.aboutText {
+    padding: 0 3.5% 2% 3.5%;
+    background-color: #f6f5f5;
+    width: 80%;
+    margin: auto;
+    border: 3px solid #d4ed85;
+    border-radius: 5px;
+}
+
+.lightBackground {
+    padding: 1.5%;
 }
