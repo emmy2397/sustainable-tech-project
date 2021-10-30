@@ -3,7 +3,8 @@ import './App.css'
 
 class FormNavs extends Component {
     state = {
-        currentStep : 1
+        currentTab : 1,
+        nextBtnDisabled: true
     }
 
     render(){
@@ -16,7 +17,7 @@ class FormNavs extends Component {
     }
 
     get PreviousButton(){
-        if(this.state.currentStep !== 1){   
+        if(this.state.currentTab !== 1){   
             return (
                 <button className = "previous form-navs" onClick={this.handleClick} name="previous">
                     previous
@@ -27,9 +28,9 @@ class FormNavs extends Component {
     }
 
     get NextButton(){
-        if(this.state.currentStep < 4){
+        if(this.state.currentTab < 3){
             return(
-                <button className = "next form-navs" onClick={this.handleClick} name="next" >
+                <button className = "next form-navs" onClick={this.handleClick} name="next" disabled={this.props.nextBtn()} >
                     next
                 </button>
             )
@@ -39,18 +40,18 @@ class FormNavs extends Component {
 
     handleClick = (e) => {
         let selectedNav = e.target.innerText;
-        let currentStep = this.state.currentStep;
+        let currentTab = this.state.currentTab;
         if(selectedNav === "next"){
-            currentStep = currentStep + 1
+            currentTab = currentTab + 1
         }
         else if(selectedNav === "previous"){
-            currentStep = currentStep - 1;
+            currentTab = currentTab - 1;
         }
         this.setState({
-            currentStep : currentStep
+            currentTab : currentTab
         })
-        this.props.formNavs(currentStep)
-
+        this.props.formNavs(currentTab);
+        console.log(this.props.nextBtn())
     }
 }
 

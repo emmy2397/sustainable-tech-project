@@ -38,36 +38,38 @@ class App extends Component {
   render() {
     return (
       <div className="AppProduct">
-        <nav>  
-          <div class="nav-title">Consumescape!</div>
-            <ul class="nav-menu">
-                <li class="nav-link">About</li>
-                <li class="nav-link">How To</li>
-                <li class="nav-link">Contact</li>
+        <div className="container">
+          <nav>  
+            <div className="nav-title">Consumescape!</div>
+              <ul className="nav-menu">
+                  <li className="nav-link">About</li>
+                  <li className="nav-link">How To</li>
+                  <li className="nav-link">Contact</li>
+              </ul>
+            </nav>    
+          <div className= "productList">
+            <Products deleteProduct={this.deleteProduct} products={this.state.products}/>
+          </div>
+
+          <br/><br/>
+
+          <div className="productForm product-layout">
+            <AddProduct addProduct={this.addProduct}/>
+          </div>
+          
+          {/*These to components are here because I did not get to routing yet*/}
+          <Contact />
+          <Privacy />
+
+          <footer>
+            <ul class="linklist">
+              <li><a href="./Privacy">Privacy</a></li>
+              <li><a href="#">Terms</a></li>
+              <li><a href="#">Contact</a></li>
             </ul>
-          </nav>    
-        <div className= "productList">
-          <Products deleteProduct={this.deleteProduct} products={this.state.products}/>
+            <span>techlabs bootcamp project 2021, Consumescape</span>
+          </footer>
         </div>
-
-        <br/><br/>
-
-        <div className="productForm product-layout">
-          <AddProduct addProduct={this.addProduct}/>
-        </div>
-        
-        {/*These to components are here because I did not get to routing yet*/}
-        <Contact />
-        <Privacy />
-
-        <footer>
-          <ul class="linklist">
-            <li><a href="./Privacy">Privacy</a></li>
-            <li><a href="#">Terms</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-          <span>techlabs bootcamp project 2021, Consumescape</span>
-        </footer>
       </div>
     )};
 }

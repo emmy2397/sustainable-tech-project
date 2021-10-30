@@ -1,8 +1,14 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+}
+
+
+
+
 .formBox {
   box-sizing: border-box;
   border: 1px solid slategrey;
-  width: 400px;
-  background-color: rgba(255, 255, 255, 0.733);
 }
 
 h1 {
@@ -26,28 +32,66 @@ h1 {
 .product-layout {
   position: relative;
   background:green;
-  display: flex;
-  justify-content: center;
+
 }
+
+/* form's next and previous buttons */
 .form-navs {
   border: 1px solid;
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.733);
+  /* background-color: white; */
   color: #000;
   text-align: center;
   user-select: none;
   cursor: pointer;
   padding: 10px;
+  transition: ease-in-out 0.4s;
+}
+
+.form-navs:disabled {
+  background-color: #888;
+}
+
+.form-navs:enabled {
+  background-color: #fff;
 }
 
 .previous {
-  left: 10px;
+  left: 0;
   transform: translate(50%, -50%);
 }
 .next {
-  right: 10px;
+  right: 0;
   transform: translate(-50%, -50%);
 }
 .next, .previous{
-  top: 50%;
+  bottom: 0;
+  width: 20%;
 }
+
+/* form's validation */
+input.fieldValidated {
+  /* background-color: greenyellow; */
+  border: 1px solid greenyellow;
+  outline: 4px solid green;
+  outline-offset: 5px;
+}
+
+input.fieldNotValidated:focus {
+  /* background-color: indianred; */
+  outline: 4px solid indianred;
+  border: 1px solid indianred;
+  outline-offset: 5px;
+}
+
+select.fieldValidated:valid {
+  border: 1px solid greenyellow;
+  outline: 5px solid green;
+  outline-offset: 4px;
+}
+
+select.fieldNotValidated {
+  border: 4px solid indianred;
+}
+
+
