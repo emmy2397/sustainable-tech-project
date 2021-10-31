@@ -510,6 +510,11 @@ handleSubmit =(e) => {
                     tab : 3
                 })
             break;
+            case(4):
+                this.setState({
+                    tab : 4
+                })
+            break;
             default:
         }
     
@@ -627,34 +632,14 @@ render(){
                         <label htmlFor="name">Please enter your e-mail:</label>
                         <input type="text" id="email" name="user_email" onChange={this.handleChange} className={`${this.state.fieldTenValidated}`}/>
                         <br/>
+                        <button class="submitButton">Submit</button>
                     </div>    
                         
-                           
-
-
                     <div className="formBox tab4" style={this.state.tab === 4 ? {display : "block"}: {display : "none"}}>
-                        <h2>Step 3 - part 2</h2>
+                        <h2>Step 4</h2>
 
-                            <label htmlFor="name">Please enter your name:</label>
-                            <input type="text" id="client" placeholder="Your name" onChange={this.handleChange}/>
                             
-                            <label htmlFor="name">Please enter your e-mail:</label>
-                            <input type="text" id="email" placeholder="Your email" onChange={this.handleChange}/>
-                            <br/>
-                            <label htmlFor="name">When do you want to be reminded?</label>
-                            <input type="date" id="reminderdate" onChange={this.handleChange}/>
-                            <br/>
-                            {/* Unfortunately, it does not work. Source: postmail.invotes.com, functionality: should send email to default mail address
-                            (so not even suitable for our case, where the input mail address should receive an reminder... :/)
-
-                            <input type="hidden" name="subject" value={subject} />
-                            <input type="hidden" name="access_token" value="tic9kh2ltjs2gqhmq6uio654" />
-                            <input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
-                            <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />*/}
-                            
-                            
-                            <br/><br/>
-                            <button class="submitButton">Submit</button> 
+                             
 
                     </div>
                 </form>

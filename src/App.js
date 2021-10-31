@@ -37,6 +37,7 @@ class App extends Component {
         <div className="container">        
           <div className="productForm product-layout">
             <AddProduct addProduct={this.addProduct}/>
+            {/*<Products deleteProduct={this.deleteProduct}/>*/}
           </div>
         </div>
       </div>
