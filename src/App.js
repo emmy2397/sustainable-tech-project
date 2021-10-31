@@ -34,10 +34,18 @@ class App extends Component {
   render() {
     return (
       <div className="AppProduct">
-        <div className="container">        
+  
+          <div className= "productList">
+            <div className="productListDescription">
+              <h2>Here is where you find your <span>consumables</span></h2>
+            </div>
+            <Products deleteProduct={this.deleteProduct} products={this.state.products}/>
+          </div>
+
+          <br/><br/>
+
           <div className="productForm product-layout">
             <AddProduct addProduct={this.addProduct}/>
-            {/*<Products deleteProduct={this.deleteProduct}/>*/}
           </div>
         </div>
       </div>
