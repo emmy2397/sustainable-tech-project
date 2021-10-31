@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import Products from './Products';
 import AddProduct from './addProduct';
+import scoredProducts from './Scoring';
 
 
 /*Root component, container component*/
@@ -9,7 +10,7 @@ import AddProduct from './addProduct';
 class App extends Component {
   state = {
     products: [
-      {type:'Electronics', name:'Washing machine', shop:'Amazon', price:300, urgency:'High', usage: 'Weekly',id:1},
+      /*{type:'Electronics', name:'Washing machine', shop:'Amazon', price:300, urgency:'High', usage: 'Weekly',id:1},*/
     ]
   }
 
@@ -46,9 +47,10 @@ class App extends Component {
 
           <div className="productForm product-layout">
             <AddProduct addProduct={this.addProduct}/>
+            {/*<scoredProducts/>*/}
           </div>
         </div>
-      </div>
+      
     )};
 }
 

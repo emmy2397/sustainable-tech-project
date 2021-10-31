@@ -571,7 +571,7 @@ render(){
                     <div class="formBox tab2" style={this.state.tab ===2 ? {display : "block"}: {display: "none"}}>
                         <h2>step 2 - </h2>
                             <p>Tell me a little more about your product, I'll note it down for you so you have all the facts in one place. Be honest to yourself do you really need this product immediatly and are you going to use it frequently?</p>
-                            <label htmlFor="name">Price:</label>
+                            <label htmlFor="name">Price (in $):</label>
                             <input required type="number" id="price" onChange={this.handleChange} className={`${this.state.fieldFourValidated}`}/>
                             
 

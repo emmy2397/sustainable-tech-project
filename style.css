@@ -143,6 +143,11 @@ nav {
     top: 20%;
 }
 
+#successPlant {
+    padding-left: 30%;
+    padding-top: 5%;
+}
+
 /* Three image containers (use 25% for four, and 50% for two, etc) */
 .row {
     display: flex;

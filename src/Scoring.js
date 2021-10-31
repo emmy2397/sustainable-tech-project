@@ -1,85 +1,58 @@
-import React, {Component} from "react";
+import React from "react";
+import Products from './Products';
 import './Products.css';
 
-/*let beltscore=0
-let Scores = [
-    {
-        agescore: agescore.value 
-    },
-    {
-        beltscore: beltscore.value
-    },
-];
-let totalscore=0*/
+
+/* counter did not work, as well as single scores that should have been summed up
+let pricescore = 0;*/
 
 
-const Scoring = ({products}) => {
-    //oder = ({Ninjas}): Wird schon in der Klammer destructured
-    //console.log(this.props);
-    // functional components: nur "props", container components mit state: "this.props"
-    const pricedProducts =products.map(product => {
-        /* if Bedingung*/
-        if (product.price >200) {
-            let pricescore=2
+
+/*const Scoring = ({products}) => {*/
+    
+    const scoredProducts =products.map(product => {
+        /*DO NOT BUY*/
+        if (product.price >200 || product.urgency=="Low" || product.usage=="Monthly" || product.usage =="More rarely") {
+            /*let pricescore=2*/
             return ( 
                 <div className="product" key={product.id}>
-                    Pricescore: {pricescore}
-                    Dont buy
+                    {/*Pricescore: {pricescore}*/}
+                    <p>I recommend you not to buy the product. Please consider other options like renting it!</p>
                 </div>)
-        } else if (product.price >100 && product.price<200){
-            let pricescore=1
+        /*DO BUY*/
+        } else if (product.price <100 || product.urgency=="High" || product.usage=="Daily" || product.usage =="Few times per week"){
+            /*let pricescore=0*/
             return ( 
                 <div className="product" key={product.id}>
-                    Pricescore: {pricescore}
-                    Rent
+                    {/*Pricescore: {pricescore}*/}
+                    <p>It is okay to buy the product. Nevertheless, I recommend to pay attention to good quality and sustainable production.</p>
                 </div>)
+        /*INDECISIVE*/
         } else {
+            /*Option for (product.price >100 && <200|| product.urgency=="Moderate" || product.usage=="Weekly" || product.usage =="Every few weeks" */
+             /*let pricescore=1*/
             return (
                 <div className="product" key={product.id}>
-                    Pricescore: {pricescore}
-                    Buy
+                    {/*Pricescore: {pricescore}*/}
+                    <p>Considering your input, I would recommend to think twice before buying the product. Maybe wait 30 days and decide then!</p>
                 </div>)
         }
     })
-    /*const beltedNinjas =ninjas.map(ninja => {
-        
-        if (ninja.belt =="black") {
-            let beltscore=2
-        return ( 
-            <div className="ninja" key={ninja.id}>
-                Beltscore: {beltscore}
-                <button onClick={() => {deleteNinja(ninja.id)}}>Delete ninja</button>
-            </div>)
-        } else if (ninja.belt =='red'){
-            let beltscore=1
-            return ( 
-                <div className="ninja" key={ninja.id}>
-                    Beltscore: {beltscore}
-                    <button onClick={() => {deleteNinja(ninja.id)}}>Delete ninja</button>
-                </div>)            
-        } else {
-            return ( 
-                <div className="ninja" key={ninja.id}>
-                    Beltscore: {beltscore}
-                    <button onClick={() => {deleteNinja(ninja.id)}}>Delete ninja</button>
-                </div>)
-        }
-       
-    })
-    const Scores = [beltscore, agescore];
+         
+    /*const Scores = [pricescore, agescore];
     const totalscore = Scores.reduce((beltscore, agescore) => beltscore+agescore);*/
                 
        
     
-    return(
+    /*return(
         <div className="product-list">
-            {pricedProducts}
+            {scoredProducts}
             {/*{beltedNinjas}
             {beltscore}
             {agescore}
-            {totalscore}*/}
+            {totalscore}}
         </div>
-    )
-}
+    )*/
+/*}*/
 
-export default Scoring;
+export default scoredProducts;
