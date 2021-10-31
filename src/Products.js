@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './Products.css';
 
-const Products = ({products, deleteProduct}) => {
+const Products = ({products, deleteProduct, buyProduct}) => {
     const [buyIsOpen, setbuyIsOpen] = useState(true);
     const [deleteIsOpen, setDeleteIsOpen] = useState(true);
     let score = 0;
@@ -28,6 +28,19 @@ const Products = ({products, deleteProduct}) => {
                 console.log(products[i])
                 deleteProduct(products[i].id)
                 closeDelete();
+                break;
+            }
+        }
+        // deleteProduct(products)
+    }
+    let buyUserProduct = (e) => {
+        for(let i = 0; i < products.length; i++){
+            console.log(products[i].shop);
+            if(e.target.id == products[i].shop){
+                console.log(products[i])
+                buyProduct(products[i].shop)
+                // deleteProduct(products[i].shop)
+                closeBuy();
                 break;
             }
         }
@@ -93,6 +106,7 @@ const Products = ({products, deleteProduct}) => {
     for(let i = 0; i<products.length; i++){
         console.log(products[i], prodScores[i])
         products[i].prodScore = prodScores[i]
+
     }
 /*     let deleteKeys = [];
     for (let i = 0; i < products.length; i++){
@@ -135,7 +149,7 @@ const Products = ({products, deleteProduct}) => {
                             <span class="close" onClick={closeBuy}>&times;</span>
                             <p>Sure you want to Buy this product</p>
                             <div className="userProductLink">
-                                <a href="">Yes Take me there</a>
+                                <div className="buyLink" id={product.shop} onClick={buyUserProduct}>Yes copy the link to your product</div>
                             </div>
                         </div>
                     </div>
