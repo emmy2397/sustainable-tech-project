@@ -33,6 +33,13 @@ class App extends Component {
       products: products
     });
   }
+  buyProduct = (shop) => {
+
+    /* Copy the text inside the text field */
+    navigator.clipboard.writeText(shop);
+    alert("Link/Shop Copied:   Paste in the address bar");
+  
+}
 
 
   render() {
@@ -51,7 +58,7 @@ class App extends Component {
             <div className="productListDescription">
               <h2>Here is where you find your <span>consumables</span></h2>
             </div>
-            <Products deleteProduct={this.deleteProduct} products={this.state.products}/>
+            <Products deleteProduct={this.deleteProduct} buyProduct={this.buyProduct} products={this.state.products}/>
           </div>
 
           <br/><br/>

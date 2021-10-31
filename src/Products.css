@@ -125,11 +125,11 @@ span.arrows {
 .userProductLink:hover {
     background-color: #f24437;
 }
-.userProductLink a{
+.userProductLink div{
     color:#efefef;
     font-size: 0.8rem
 }
-.userProductLink a::after {
+.userProductLink div::after {
     content: " 💔";
     font-size: 2rem;
 }
