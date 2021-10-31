@@ -4,11 +4,6 @@ import Products from './Products';
 import AddProduct from './addProduct';
 
 
-
-import Privacy from './Privacy';
-import Contact from './Contact';
-
-
 /*Root component, container component*/
 
 class App extends Component {
@@ -35,18 +30,11 @@ class App extends Component {
   }
 
 
+
   render() {
     return (
       <div className="AppProduct">
-        <div className="container">
-          <nav>  
-            <div className="nav-title">Consumescape!</div>
-              <ul className="nav-menu">
-                  <li className="nav-link">About</li>
-                  <li className="nav-link">How To</li>
-                  <li className="nav-link">Contact</li>
-              </ul>
-            </nav>    
+  
           <div className= "productList">
             <div className="productListDescription">
               <h2>Here is where you find your <span>consumables</span></h2>
@@ -59,19 +47,6 @@ class App extends Component {
           <div className="productForm product-layout">
             <AddProduct addProduct={this.addProduct}/>
           </div>
-          
-          {/*These to components are here because I did not get to routing yet*/}
-          <Contact />
-          <Privacy />
-
-          <footer>
-            <ul class="linklist">
-              <li><a href="./Privacy">Privacy</a></li>
-              <li><a href="#">Terms</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-            <span>techlabs bootcamp project 2021, Consumescape</span>
-          </footer>
         </div>
       </div>
     )};
