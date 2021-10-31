@@ -136,6 +136,7 @@ class AddProduct extends Component {
         fieldNine: false,
         fieldTen: false,
         defaultReminder: true,
+        prodScore: null
   }
 
   handleChange = (e) => {
