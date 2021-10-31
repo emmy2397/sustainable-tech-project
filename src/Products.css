@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
+html {
+    height: 100%
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: rgba(181, 255, 218, 0.082);
+    height: 100%;
+    width: 100%;
 }
 
 h2 {
     font-size: large;
     text-indent: 5%;
+    margin: 2% auto 0 auto;
 }
 
 p {
@@ -21,7 +28,7 @@ label {
     justify-content: flex-start;
     width: 90%;
     line-height: 1.25;
-    margin: 2% 5% 2% 5%;
+    margin: 2% 5% 1% 5%;
   }
 
 a {
@@ -29,9 +36,14 @@ color: #f6f5f5;
 text-decoration: none;
 }
 
+ul {
+    margin: 0;
+}
+
 li {
     list-style: none;
 }
+
 
 /*Product display*/
 
@@ -185,41 +197,22 @@ span.arrows {
   }
 
 
-/*Nav bar*/
 
-nav {
-    min-height: 7vh;
-    width: 98.5vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(30, 49, 49);
-    box-shadow: 5px 5px 12px /* 3rd digit is how great is the blur of the shadow */ rgba(0, 0, 0, 0.2);
-    padding: 0 ;
-    color: #f6f5f5;
-}
-
-.nav-menu {
-    font-size: large;
-    display: flex;
-    list-style: none;
-}
-
-.nav-link {
-    margin: 0 25px;
-    cursor: pointer;
-}
-
-.nav-title {
-    font-size: 2em;
-    text-indent: 5%;
-}
 
 
 /*Form*/
 
+
+#div-form {
+    height: 50%;
+}
+
 .productForm.product-layout {
-    background-color: darkslategray;
+    background-color: pink;
+    width: auto;
+    height: 50vh;
+    margin: 0;
+
 }
 
 .productForm {
@@ -237,36 +230,8 @@ form {
     color: darkslategray;
     width: 65vw;
     margin: 2% auto 2% auto;
-    /* height: 85vh; */
-    position: relative
+    height: 100%;
 }
-
-.formBox.tab1 {
-    background: none;
-    border: none;
-    width: auto;
-    height: 85vh;
-    padding: 0;
-    margin: 0;
-}
-
-.formBox.tab2 {
-    background: none;
-    border: none;
-    width: auto;
-    height: 85vh;
-    padding: 0;
-    margin: 0;
-}
-
-.next.form-navs {
-    background-color: darkseagreen;
-    border: 2px solid #d4ed85;
-    border-radius: 5px;
-    color: darkslategray;
-
-}
-
 
 input {
     display: flex;
@@ -276,7 +241,7 @@ input {
     font-size:medium;
     color:slategrey;
     padding: 5px 5px;
-    margin: 0% 5% 2% 5%;
+    margin: 0% 5% 0 5%;
     width: 90%;
     line-height: 1.25;
     box-sizing:border-box;
@@ -302,8 +267,7 @@ textarea {
     line-height: 1.25;
     box-sizing:border-box;
     border: 1px solid slategrey;
-    border-radius: 4px;
-   
+    border-radius: 4px;   
 }
 
 textarea:focus {
@@ -327,6 +291,24 @@ select {
     font-family: 'Poppins', sans-serif;
 }
 
+/* Buttons */
+
+.next.form-navs {
+    background-color: darkseagreen;
+    border: 2px solid #d4ed85;
+    border-radius: 5px;
+    color: darkslategray;
+    position: absolute;
+}
+
+.previous.form-navs {
+    background-color: darkseagreen;
+    border: 2px solid #d4ed85;
+    border-radius: 5px;
+    color: darkslategray;
+
+}
+
 button {
     font-family: 'Poppins', sans-serif;
 }
@@ -342,18 +324,17 @@ button {
 	color:#ffffff;
 	font-size: 17px;
 	padding: 6px 31px;
-    width: 40%;
+    width: 20%;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #2f6627;
     position: absolute;
-    bottom: 0;
-    right: 0;
-    transform: translate(-20%, -50%);
+    transform: translate(100%, -50%);
 }
 .submitButton:hover {
 	background:linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
 	background-color:#5cbf2a;
 }
+
 
 .emailReminder {
     display: flex;
@@ -362,13 +343,76 @@ button {
     padding: 10px 0;
     height: 120px;
 }
-.reminder30{
-    /* box-sizing: border-box;
+
+
+/* page 1 */
+
+.formBox.tab1 {
+    background: none;
+    border: none;
+    width: auto;
+    height: 60%;
+    padding: 0;
+    margin: 0;
+}
+
+.formBox.tab1 > p {
+    width: 66%;
+}
+
+/* page 2 */
+
+.formBox.tab2 {
+    background: none;
+    border: none;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+/* Page 3 */
+
+.formBox.tab3 {
+    background: none;
+    border: none;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+/* Page 4 */
+
+.formBox.tab4 {
+    background: none;
+    border: none;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+/* Images */
+
+#leaf-smiling {
+    width: 13%;
+    height: auto;
+    position: absolute;
+    top: 10%;
+    right: 23%;
+}
+
+/* reminder */
+
+
+/*.reminder30{
+    box-sizing: border-box;
     display: flex;
     width: 94%;
     margin: 0 3% 0 3%;
     height: 50px;
-    justify-content: center; */
+    justify-content: center;
 }
 .reminderBox {
     /* flex: 1;
@@ -378,8 +422,8 @@ button {
     border: 3px solid #d4ed85;
     border-radius: 5px;
     margin: 2%;
-    padding: 3% 7% 3% 7%; */
-}
+    padding: 3% 7% 3% 7%; 
+}*/
 
 /* email reminder */
 .reminder30 {
@@ -466,16 +510,6 @@ button {
     /* outline-offset: 5px; */
 }
 
-/* Page 3 */
-
-.formBox.tab3 {
-    background: none;
-    border: none;
-    width: auto;
-    height: 85vh;
-    padding: 0;
-    margin: 0;
-}
 
 /*Footer*/
 

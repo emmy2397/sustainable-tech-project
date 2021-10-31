@@ -119,7 +119,7 @@ const Products = ({products, deleteProduct, buyProduct}) => {
 
 
     const productList =products.map(product => {
-    /*returns products with a price higher than 20 -> Change to a different condition like */
+    
        return (
             <div className="product productForm" key={product.id}>
                 <div>Consumescape Score: <span className="arrows">&#8594;</span> {product.prodScore}</div>
@@ -169,7 +169,7 @@ const Products = ({products, deleteProduct, buyProduct}) => {
                     <span class="close" onClick={closeDelete}>&times;</span>
                     <p>You are about to save and sustain the future</p>
                     <div className="userProductDelete">
-                        <button className={`deleteButton `} id={product.id} onClick={deleteUserProduct}>Delete</button>
+                        <button className={`deleteButton `} id={product.id} onClick={deleteUserProduct}>{/*<a href="../subpages/deletedProduct.html">*/}Delete{/*</a>*/}</button>
                         {/* <button className='deleteButton' onClick={() => {deleteProduct(product.id)}}>Delete</button> */}
                     </div>
                 </div>
