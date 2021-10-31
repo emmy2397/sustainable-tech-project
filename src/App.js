@@ -48,6 +48,9 @@ class App extends Component {
               </ul>
             </nav>    
           <div className= "productList">
+            <div className="productListDescription">
+              <h2>Here is where you find your <span>consumables</span></h2>
+            </div>
             <Products deleteProduct={this.deleteProduct} products={this.state.products}/>
           </div>
 
