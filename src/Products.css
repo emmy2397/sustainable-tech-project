@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
+html {
+    height: 100%
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: rgba(181, 255, 218, 0.082);
+    height: 100%;
+    width: 100%;
 }
 
 h2 {
     font-size: large;
     text-indent: 5%;
+    margin: 2% auto 0 auto;
 }
 
 p {
@@ -21,12 +28,16 @@ label {
     justify-content: flex-start;
     width: 90%;
     line-height: 1.25;
-    margin: 2% 5% 2% 5%;
+    margin: 2% 5% 1% 5%;
   }
 
 a {
 color: #f6f5f5;
 text-decoration: none;
+}
+
+ul {
+    margin: 0;
 }
 
 li {
@@ -139,8 +150,17 @@ nav {
 
 /*Form*/
 
+
+#div-form {
+    height: 50%;
+}
+
 .productForm.product-layout {
-    background-color: darkslategray;
+    background-color: pink;
+    width: auto;
+    height: 50vh;
+    margin: 0;
+
 }
 
 .productForm {
@@ -158,36 +178,8 @@ form {
     color: darkslategray;
     width: 65vw;
     margin: 2% auto 2% auto;
-    /* height: 85vh; */
-    position: relative
+    height: 100%;
 }
-
-.formBox.tab1 {
-    background: none;
-    border: none;
-    width: auto;
-    height: 85vh;
-    padding: 0;
-    margin: 0;
-}
-
-.formBox.tab2 {
-    background: none;
-    border: none;
-    width: auto;
-    height: 85vh;
-    padding: 0;
-    margin: 0;
-}
-
-.next.form-navs {
-    background-color: darkseagreen;
-    border: 2px solid #d4ed85;
-    border-radius: 5px;
-    color: darkslategray;
-
-}
-
 
 input {
     display: flex;
@@ -197,7 +189,7 @@ input {
     font-size:medium;
     color:slategrey;
     padding: 5px 5px;
-    margin: 0% 5% 2% 5%;
+    margin: 0% 5% 0 5%;
     width: 90%;
     line-height: 1.25;
     box-sizing:border-box;
@@ -223,8 +215,7 @@ textarea {
     line-height: 1.25;
     box-sizing:border-box;
     border: 1px solid slategrey;
-    border-radius: 4px;
-   
+    border-radius: 4px;   
 }
 
 textarea:focus {
@@ -246,6 +237,24 @@ select {
     border: 1px solid slategrey;
     border-radius: 4px;
     font-family: 'Poppins', sans-serif;
+}
+
+/* Buttons */
+
+.next.form-navs {
+    background-color: darkseagreen;
+    border: 2px solid #d4ed85;
+    border-radius: 5px;
+    color: darkslategray;
+    position: absolute;
+}
+
+.previous.form-navs {
+    background-color: darkseagreen;
+    border: 2px solid #d4ed85;
+    border-radius: 5px;
+    color: darkslategray;
+
 }
 
 button {
@@ -276,6 +285,7 @@ button {
 	background-color:#5cbf2a;
 }
 
+
 .emailReminder {
     display: flex;
     /* border: 3px solid black; */
@@ -283,6 +293,69 @@ button {
     padding: 10px 0;
     height: 120px;
 }
+
+
+/* page 1 */
+
+.formBox.tab1 {
+    background: none;
+    border: none;
+    width: auto;
+    height: 60%;
+    padding: 0;
+    margin: 0;
+}
+
+.formBox.tab1 > p {
+    width: 66%;
+}
+
+/* page 2 */
+
+.formBox.tab2 {
+    background: none;
+    border: none;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+/* Page 3 */
+
+.formBox.tab3 {
+    background: none;
+    border: none;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+/* Page 4 */
+
+.formBox.tab4 {
+    background: none;
+    border: none;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+/* Images */
+
+#leaf-smiling {
+    width: 13%;
+    height: auto;
+    position: absolute;
+    top: 10%;
+    right: 23%;
+}
+
+/* reminder */
+
+
 .reminder30{
     /* box-sizing: border-box;
     display: flex;
@@ -387,16 +460,6 @@ button {
     /* outline-offset: 5px; */
 }
 
-/* Page 3 */
-
-.formBox.tab3 {
-    background: none;
-    border: none;
-    width: auto;
-    height: 85vh;
-    padding: 0;
-    margin: 0;
-}
 
 /*Footer*/
 

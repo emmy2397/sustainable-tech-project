@@ -19,7 +19,8 @@ h1 {
 }
 
 h2 {
-    font-size: 3vw;
+    color: darkslategray;
+    font-size: 4vw;
     margin: 0;
 }
 
@@ -30,6 +31,10 @@ h3 {
 
 li {
     list-style: none;
+}
+
+p {
+    color: darkslategray;
 }
 
 a {
@@ -44,12 +49,12 @@ nav {
     align-items: center;
     background-color: darkslategray;
     box-shadow: 5px 5px 12px /* 3rd digit is how great is the blur of the shadow */ rgba(0, 0, 0, 0.2);
-    padding: 0 200px;
+    padding: 0 3.5%;
     color: #f6f5f5;
 }
 
 .nav-menu {
-    font-size: large;
+    font-size: 1.5vw;
     display: flex;
     list-style: none;
 }
@@ -60,7 +65,16 @@ nav {
 }
 
 .nav-title {
-    font-size: 2em;
+    font-size: 2vw;
+}
+
+.lightBackground {
+    background-color: darkseagreen;
+    margin: 0;
+}
+
+.longText {
+    padding: 5%;
 }
 
 /* Home Section */
@@ -68,7 +82,6 @@ nav {
     width: 98,5vw; /* viewport widht <- the whole width of your browser screen */
     height: 82vh; /* viewport height <- 95% of the height of your browser screen */
     background-color: darkseagreen;
-
 } 
     /* why only 95% of vh and not 100? so that the next part of your page is already visible and the user knows that by scrolling down they will arrive to the next part */
 
@@ -80,7 +93,6 @@ nav {
     font-size: 1.9vw;
     color: darkslategray;
     margin: 0;
-
 }
 
 #intro-cont {
@@ -130,6 +142,18 @@ nav {
     left: 65%;
     top: 20%;
 }
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.row {
+    display: flex;
+  }
+  
+.column {
+    flex: 33.33%;
+    padding: 6%;
+    text-align: center;
+  }
+
 
 /* button */
 .my-button {
@@ -185,9 +209,6 @@ nav {
     border: 2px solid #d4ed85;
     border-radius: 5px;
     background: darkseagreen;
-}
-
-.how-to-cont {
 }
 
 #how-step-cont {
@@ -287,4 +308,54 @@ footer {
 .button-end:active {
     position: relative;
     top: 1px;
+}
+
+
+/*IFRAME*/
+iframe {
+    width:100%;
+    height: 1100px;
+    border: 0;
+
+}
+
+
+/*Contact Form: Linked to Products.css*/
+#email_form {
+    height: 25%;
+    background-color: rgba(255, 255, 255, 0.35);
+    margin:5%;
+}
+
+/* About Page */
+.about-page-h1 {
+        color: darkslategray;
+        font-size: 2.5vw;
+        margin: 0 0 0 0;
+        text-align: center;    
+}
+
+.about-page-h2 {
+    color: darkslategray;
+    font-size: 1.5vw;
+    margin: auto;
+    padding-left: 0.8%
+}
+
+.aboutText {
+    padding: 0 2.5% 1% 2.5%;
+    background-color: #f6f5f5;
+    width: 80%;
+    margin: auto;
+    border: 3px solid #d4ed85;
+    border-radius: 5px;
+}
+
+.lightBackground {
+    padding: 1.5%;
+}
+
+.aboutText > p {
+    margin: 1%;
+    text-align: justify;
 }
