@@ -123,8 +123,8 @@ const Products = ({products, deleteProduct, buyProduct}) => {
         
        return (
             <div className="product productForm" key={product.id}>
-                <div>Consumescape Score: <span className="arrows">&#8594;</span> <span  style={product.prodScore > 5 ? {backgroundColor: "indianred"}:{backgroundColor: "green",padding: "5px",color:"white"}}>{product.prodScore}</span></div>
-                <div>Our advice <span className="arrows">&#8594;</span> <span style={product.prodScore > 5 ? {backgroundColor: "indianred"}:{backgroundColor: "green",padding: "5px",color:"white"}}>{product.prodScore > 5 ? "Don't buy": "Ok to buy"}</span></div>
+                <div>Consumescape Score: <span className="arrows">&#8594;</span> <span  style={product.prodScore > 5 ? {backgroundColor: "indianred",padding:"5px",color:"white"}:{backgroundColor: "green",padding: "5px",color:"white"}}>{product.prodScore}</span></div>
+                <div>Our advice <span className="arrows">&#8594;</span> <span style={product.prodScore > 5 ? {backgroundColor: "indianred",padding:"5px",color:"white"}:{backgroundColor: "green",padding: "5px",color:"white"}}>{product.prodScore > 5 ? "Don't buy": "Ok to buy"}</span></div>
                 <div>Product type <span className="arrows">&#8594;</span> {product.type}</div>
                 <div>Product name <span className="arrows">&#8594;</span> {product.name}</div>
                 <div>Shop or link <span className="arrows">&#8594;</span> {product.shop}</div>
