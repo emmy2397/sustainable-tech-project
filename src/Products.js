@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
+import happyplant from './success-plant.PNG';
 import './Products.css';
 
 const Products = ({products, deleteProduct, buyProduct}) => {
     const [buyIsOpen, setbuyIsOpen] = useState(true);
     const [deleteIsOpen, setDeleteIsOpen] = useState(true);
     const [productBought, setProductBought] = useState(false);
+    const [productDeleted, setProductDeleted] = useState(false);
     let score = 0;
     // let [score, setScore] = useState(0)
     let openBuy = () => {
@@ -29,6 +31,7 @@ const Products = ({products, deleteProduct, buyProduct}) => {
                 console.log(products[i])
                 deleteProduct(products[i].id)
                 closeDelete();
+                setProductDeleted(true);
                 break;
             }
         }
@@ -172,6 +175,11 @@ const Products = ({products, deleteProduct, buyProduct}) => {
                     <div className="userProductDelete">
                         <button className={`deleteButton `} id={product.id} onClick={deleteUserProduct}>{/*<a href="../subpages/deletedProduct.html">*/}Delete{/*</a>*/}</button>
                         {/* <button className='deleteButton' onClick={() => {deleteProduct(product.id)}}>Delete</button> */}
+                    </div>
+                    <br/>
+                    <div>
+                        <p>Right click to save and share with your friends!</p>
+                        <img /*hidden={productDeleted ? false: true}*/  id="successPlant" style={{width:"100%"}} src={happyplant} alt="happy plant"/>
                     </div>
                 </div>
             </div>

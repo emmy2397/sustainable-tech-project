@@ -28,7 +28,7 @@ class FormNavs extends Component {
     }
 
     get NextButton(){
-        if(this.state.currentTab < 4){
+        if(this.state.currentTab < 3){
             return(
                 <button className = "next form-navs" onClick={this.handleClick} name="next" disabled={this.props.nextBtn()} >
                     next
