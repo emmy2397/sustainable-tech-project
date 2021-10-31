@@ -7,8 +7,9 @@ html {
 body {
     font-family: 'Poppins', sans-serif;
     background-color: rgba(181, 255, 218, 0.082);
-    height: 100%;
+    /* height: 100%; */
     width: 100%;
+    display: grid;
 }
 
 h2 {
@@ -210,7 +211,7 @@ span.arrows {
 .productForm.product-layout {
     background-color: darkslategray;
     width: auto;
-    height: 50vh;
+    /* height: 50vh; */
     margin: 0;
 
 }

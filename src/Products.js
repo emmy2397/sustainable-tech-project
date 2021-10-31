@@ -120,10 +120,11 @@ const Products = ({products, deleteProduct, buyProduct}) => {
 
     const productList =products.map(product => {
     
+        
        return (
             <div className="product productForm" key={product.id}>
-                <div>Consumescape Score: <span className="arrows">&#8594;</span> {product.prodScore}</div>
-                <div>Our advice <span className="arrows">&#8594;</span> {product.prodScore > 5 ? "Don't buy": "Ok to buy"}</div>
+                <div>Consumescape Score: <span className="arrows">&#8594;</span> <span  style={product.prodScore > 5 ? {backgroundColor: "indianred",padding:"5px",color:"white"}:{backgroundColor: "green",padding: "5px",color:"white"}}>{product.prodScore}</span></div>
+                <div>Our advice <span className="arrows">&#8594;</span> <span style={product.prodScore > 5 ? {backgroundColor: "indianred",padding:"5px",color:"white"}:{backgroundColor: "green",padding: "5px",color:"white"}}>{product.prodScore > 5 ? "Don't buy": "Ok to buy"}</span></div>
                 <div>Product type <span className="arrows">&#8594;</span> {product.type}</div>
                 <div>Product name <span className="arrows">&#8594;</span> {product.name}</div>
                 <div>Shop or link <span className="arrows">&#8594;</span> {product.shop}</div>
@@ -133,7 +134,7 @@ const Products = ({products, deleteProduct, buyProduct}) => {
                 <div>Name <span className="arrows">&#8594;</span> {product.client}</div>
                 {/* <div>Email Reminder: {product.reminder30 || product.noReminder30}</div> */}
                 <div>E-mail<span className="arrows">&#8594;</span> {product.email}</div>
-                <div>Reminder date <span className="arrows">&#x21B4;</span> <br/>{(product.reminderdate) ? `Custom reminder set till ${product.reminderdate}` : "" || (product.reminder30 == "Yes") ? "30 day reminder": "" || `${product.noReminder30} reminder`}</div>
+                 <div>Reminder date <span className="arrows">&#x21B4;</span> <br/>{(product.reminderdate) ? `Custom reminder set till ${product.reminderdate}` : "" || (product.reminder30 == "Yes") ? "30 day reminder": "" || `${product.noReminder30} reminder`}</div>
                 <div className="userDecision">
                     <button className="buyButton" onClick={openBuy}>{productBought ? "You bought this product 😑":"Buy"}</button>
                     <button className={`deleteButton ${product.id}`} onClick={openDelete}>{!productBought ? "Delete":"Make the right choice"}</button>
