@@ -4,6 +4,7 @@ import './Products.css';
 const Products = ({products, deleteProduct, buyProduct}) => {
     const [buyIsOpen, setbuyIsOpen] = useState(true);
     const [deleteIsOpen, setDeleteIsOpen] = useState(true);
+    const [productBought, setProductBought] = useState(false);
     let score = 0;
     // let [score, setScore] = useState(0)
     let openBuy = () => {
@@ -38,7 +39,8 @@ const Products = ({products, deleteProduct, buyProduct}) => {
             console.log(products[i].shop);
             if(e.target.id == products[i].shop){
                 console.log(products[i])
-                buyProduct(products[i].shop)
+                buyProduct(products[i].shop);
+                setProductBought(true);
                 // deleteProduct(products[i].shop)
                 closeBuy();
                 break;
@@ -133,8 +135,8 @@ const Products = ({products, deleteProduct, buyProduct}) => {
                 <div>E-mail<span className="arrows">&#8594;</span> {product.email}</div>
                 <div>Reminder date <span className="arrows">&#x21B4;</span> <br/>{(product.reminderdate) ? `Custom reminder set till ${product.reminderdate}` : "" || (product.reminder30 == "Yes") ? "30 day reminder": "" || `${product.noReminder30} reminder`}</div>
                 <div className="userDecision">
-                    <button className="buyButton" onClick={openBuy}>Buy</button>
-                    <button className={`deleteButton ${product.id}`} onClick={openDelete}>Delete</button>
+                    <button className="buyButton" onClick={openBuy}>{productBought ? "You bought this product 😑":"Buy"}</button>
+                    <button className={`deleteButton ${product.id}`} onClick={openDelete}>{!productBought ? "Delete":"Make the right choice"}</button>
                 </div>
                 <br/>
             </div>
@@ -149,7 +151,10 @@ const Products = ({products, deleteProduct, buyProduct}) => {
                             <span class="close" onClick={closeBuy}>&times;</span>
                             <p>Sure you want to Buy this product</p>
                             <div className="userProductLink">
-                                <div className="buyLink" id={product.shop} onClick={buyUserProduct}>Yes copy the link to your product</div>
+                                <div className="buyLink" id={product.shop} onClick={buyUserProduct}>
+                                
+                                {productBought ? "Buy Again":"Yes copy the link to your product"}
+                                </div>
                             </div>
                         </div>
                     </div>
