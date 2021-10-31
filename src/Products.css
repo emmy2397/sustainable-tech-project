@@ -209,7 +209,7 @@ span.arrows {
 }
 
 .productForm.product-layout {
-    background-color: pink;
+    background-color: darkslategray;
     width: auto;
     /* height: 50vh; */
     margin: 0;
@@ -354,11 +354,12 @@ button {
     width: auto;
     height: 60%;
     padding: 0;
-    margin: 0;
+    margin: 0 0 3% 0;
 }
 
 .formBox.tab1 > p {
     width: 66%;
+    margin: 0 5% 2% 5%;
 }
 
 /* page 2 */
@@ -372,6 +373,11 @@ button {
     margin: 0;
 }
 
+.formBox.tab2 > p {
+    padding: 0;
+    margin: 0 5% 2% 5%;
+}
+
 /* Page 3 */
 
 .formBox.tab3 {
@@ -381,6 +387,11 @@ button {
     height: auto;
     padding: 0;
     margin: 0;
+}
+
+.formBox.tab3 > label {
+    padding: 0;
+    margin: 0 5% 2% 5%;
 }
 
 /* Page 4 */
