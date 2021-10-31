@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import FormNavs from './formNavs';
 // import Email from './email';
 import './App.css';
-import plant from './plant-smiling-left.png';
+import plant from './plant-smiling.png';
 
 import emailjs from 'emailjs-com';
 
