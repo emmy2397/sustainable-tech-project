@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import Products from './Products';
 import AddProduct from './addProduct';
-import scoredProducts from './Scoring';
+/*import scoredProducts from './Scoring';*/
 
 
 /*Root component, container component*/
