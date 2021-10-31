@@ -238,10 +238,12 @@ class AddProduct extends Component {
                 if((mySetDay_month == today_month) && (mySetDay_year - today_year == 0)){
                     daysLeft = mySetDay_day - today_day;
                     console.log(daysLeft);
-                    totalDys = daysLeft
+                    totalDys = daysLeft;
+                    totalMilSec = daysLeft * 24 * 60 * 60 * 1000
                     if(daysLeft >= 1 && daysLeft < 30){
                         customDateSet = true
                         totalDys = daysLeft;
+                        totalMilSec = daysLeft * 24 * 60 * 60 * 1000;
                     }
                     else {customDateSet = false;}
                 }
@@ -255,6 +257,7 @@ class AddProduct extends Component {
                         console.log(daysLeft);
                         customDateSet = true;
                         totalDys = daysLeft;
+                        totalMilSec = daysLeft * 24 * 60 * 60 * 1000;
                     }
                     else{
                         console.log("not valid");
@@ -286,6 +289,7 @@ class AddProduct extends Component {
                         console.log(daysLeft);
                         customDateSet = true;
                         totalDys = daysLeft;
+                        totalMilSec = daysLeft * 24 * 60 * 60 * 1000;
                     }
                     else{
                         console.log("Not valid");
@@ -413,7 +417,7 @@ handleSubmit =(e) => {
     } */
     //sets the time email fxn will execute
     if(this.state.reminder){
-        alert(`You will get a reminder in ${totalDys} days`);
+        alert(`You will get a reminder in ${totalDys} days or in ${totalMilSec} Milliseconds`);
         // setTimeout(createEmail, this.state.time);
     }
     this.setState({
