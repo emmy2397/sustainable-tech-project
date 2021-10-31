@@ -4,6 +4,8 @@ import './Products.css';
 const Products = ({products, deleteProduct}) => {
     const [buyIsOpen, setbuyIsOpen] = useState(true);
     const [deleteIsOpen, setDeleteIsOpen] = useState(true);
+    let score = 0;
+    // let [score, setScore] = useState(0)
     let openBuy = () => {
         setbuyIsOpen(!buyIsOpen);
     }
@@ -31,17 +33,81 @@ const Products = ({products, deleteProduct}) => {
         }
         // deleteProduct(products)
     }
+    console.log(products)
+    let prodScores = [];
 
+    products.forEach((product, i) => {
+        console.log(product, i)
+        if(product.price)
+        {
+            if(product.price > 100){
+                score+=2
+            }
+            else if(product.price > 50){
+                score+=1
+            }
+            else{
+                    score+=0
+            }
+        }
+        if(product.urgency){
+            if(product.urgency === "Low"){
+                    score+=2
+            }
+            else if(product.urgency === "Moderate"){
+                score+=1
+            }
+            else{
+                score+=0
+            }
+        }
+        if(product.usage){
+            if(product.usage === "More rarely"){
+                score+=6
+            }
+            else if(product.usage === "Monthly"){
+                score+=5
+            }
+            else if(product.usage === "Every few weeks"){
+                score+=4
+            }
+            else if(product.usage === "Weekly"){
+                score+=3
+            }
+            else if(product.usage === "Few times per week"){
+                score+=2
+            }
+            else{
+                score+=1
+            }
+            prodScores.push(score);
+            score = 0;
+
+        }
+        /* for(let i = 0; i < product[i].length; i++){
+            console.log(product[i]);
+        } */
+    })
+    // setScore(score);
+    console.log(prodScores)
+    for(let i = 0; i<products.length; i++){
+        console.log(products[i], prodScores[i])
+        products[i].prodScore = prodScores[i]
+    }
 /*     let deleteKeys = [];
     for (let i = 0; i < products.length; i++){
         deleteKeys.push(i);
     } */
     // console.log(deleteKeys);
 
+
+
     const productList =products.map(product => {
     
        return (
             <div className="product productForm" key={product.id}>
+                <div>Consumescape Score: <span className="arrows">&#8594;</span> {product.prodScore}</div>
+                <div>Our advice <span className="arrows">&#8594;</span> {product.prodScore > 5 ? "Don't buy": "Ok to buy"}</div>
                 <div>Product type <span className="arrows">&#8594;</span> {product.type}</div>
                 <div>Product name <span className="arrows">&#8594;</span> {product.name}</div>
                 <div>Shop or link <span className="arrows">&#8594;</span> {product.shop}</div>
@@ -90,7 +156,7 @@ const Products = ({products, deleteProduct}) => {
                 </div>
             </div>
         )
-})
+    })
     return(
         <div className="product-list">
             {productList}
