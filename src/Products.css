@@ -44,6 +44,7 @@ li {
     list-style: none;
 }
 
+
 /*Product display*/
 
 .product-list {
@@ -196,35 +197,7 @@ span.arrows {
   }
 
 
-/*Nav bar*/
 
-nav {
-    min-height: 7vh;
-    width: 98.5vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(30, 49, 49);
-    box-shadow: 5px 5px 12px /* 3rd digit is how great is the blur of the shadow */ rgba(0, 0, 0, 0.2);
-    padding: 0 ;
-    color: #f6f5f5;
-}
-
-.nav-menu {
-    font-size: large;
-    display: flex;
-    list-style: none;
-}
-
-.nav-link {
-    margin: 0 25px;
-    cursor: pointer;
-}
-
-.nav-title {
-    font-size: 2em;
-    text-indent: 5%;
-}
 
 
 /*Form*/
