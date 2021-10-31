@@ -601,7 +601,7 @@ render(){
                     </div>
 
                     <div className="formBox tab3" style={this.state.tab === 3 ? {display : "block"}: {display : "none"}}>
-                        <h2>Step 3</h2>
+                        <h2>step 3 - set a reminder</h2>
 
                         <label htmlFor="name">Would you like to add a 30 day reminder or set a custom date not later than 30 days?</label>
                         <div className="reminderPicker">
