@@ -63,12 +63,39 @@ li {
     display: flex;
     flex-direction: column;
     border-radius: 10px;
+    justify-content: flex-end;
 }
 
+
+.userDecision {
+    display: flex;
+    justify-content: space-around
+}
 .deleteButton {
-	box-shadow: 0px 1px 1px 0px #8a2a21;
-	background-color:#c62d1f;
+	box-shadow: 0px 1px 1px 0px rgb(85, 168, 85);
+	background-color:rgb(50, 173, 50);
 	border-radius:8px;
+	border:1px solid rgb(85, 168, 85);
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:17px;
+	padding:5px 10px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #810e05;
+    width: 45%
+}
+.deleteButton:hover {
+	background-color:green;
+}
+.deleteButton:active {
+	position:relative;
+	top:1px;
+}
+.buyButton {
+	background-color:#c62d1f;
+	box-shadow: 0px 1px 1px 0px #8a2a21;
+    border-radius:8px;
 	border:1px solid #d02718;
 	display:inline-block;
 	cursor:pointer;
@@ -77,14 +104,18 @@ li {
 	padding:5px 10px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #810e05;
+    width: 45%;
 }
-.deleteButton:hover {
+.buyButton:hover {
 	background-color:#f24437;
+
 }
-.deleteButton:active {
-	position:relative;
-	top:1px;
+
+span.arrows {
+    font-size: 1.1rem;
+    color: rgb(21, 224, 21)
 }
+
 
 /*Nav bar*/
 
@@ -255,6 +286,15 @@ button {
 }
 
 
+.emailReminder {
+    display: flex;
+    /* border: 3px solid black; */
+    box-sizing: border-box;
+    padding: 10px 0;
+    height: 120px;
+}
+
+
 /* page 1 */
 
 .formBox.tab1 {
@@ -315,6 +355,7 @@ button {
 
 /* reminder */
 
+
 .reminder30{
     /* box-sizing: border-box;
     display: flex;
@@ -335,16 +376,42 @@ button {
 }
 
 /* email reminder */
-.reminder30{
+.reminder30 {
     display: flex;
     background-color: #efef;
     box-sizing: border-box;
     width: 80%;
     margin: 0  auto;
     border-radius: 10px;
-
 }
 
+.userReminderDate {
+    width: 100%;
+}
+
+.reminderPicker {
+    display: flex;
+    border: 1px solid;
+    justify-content: space-evenly;
+}
+
+.noCustomise {
+    flex: 1;
+    text-align: center;
+}
+
+.customise {
+    flex: 1;
+    text-align: center;
+}
+
+.customise, .noCustomise {
+    border: 1px solid;
+}
+
+.customise.activeTab, .noCustomise.activeTab {
+    background-color: white;
+}
 
 
 .reminderBox {

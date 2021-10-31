@@ -9,13 +9,97 @@ import emailjs from 'emailjs-com';
 const subject = "Consumescape reminder"
 let importantInputFields = false;
 let totalMilSec = 1000 * 60 * 60 * 24 * 30;
-let totalSec = totalMilSec / 1000
-let totalMin = totalSec / (1000 * 60);
-let totalHrs = totalMin / 60;
+const totalSec = totalMilSec / 1000
+const totalMin = totalSec / 60;
+const totalHrs = totalMin / 60;
 let totalDys = totalHrs / 24;
 
 //Reassigned totalDys to 2 seconds to get a feedback of the setTimeout fxn
-totalDys = 2000;
+// totalDys = 2000;
+let activeTab1 = "activeTab";
+let activeTab2 = "";
+
+/* let today = new Date();
+let mySetDay = new Date("2021 May 31");
+console.log(today)
+console.log(mySetDay);
+let today_day = today.getDate();
+let mySetDay_day = mySetDay.getDate();
+let today_month = today.getMonth();
+let mySetDay_month = mySetDay.getMonth();
+let today_year = today.getFullYear();
+let mySetDay_year = mySetDay.getFullYear();
+let monthDuration = null;
+let daysInMonth = [];
+let daysLeft = 0;
+let userCustomDate */
+// today.setMonth(2, 0)
+// console.log(today)
+
+
+
+
+// if((mySetDay_year - today_year >= 0) && (mySetDay_year - today_year <= 1)){
+//     let tempMySetDayMonth = mySetDay;
+//     (mySetDay_year - today_year > 0) ? tempMySetDayMonth.setMonth(0) : tempMySetDayMonth.setMonth(mySetDay_month);
+//     let monthsLeftInYear = mySetDay_month - tempMySetDayMonth.getMonth();
+//     if(monthsLeftInYear <= 0){
+//         if((mySetDay_month == today_month) && (mySetDay_year - today_year == 0)){
+//             daysLeft = mySetDay_day - today_day;
+//             console.log(daysLeft)
+//         }
+//         else if(mySetDay_month == 0 && today_month == 11){
+
+//             let tempMySetDayMonth = today;
+//             tempMySetDayMonth.setMonth(today_month + 1, 0);
+//             let daysLeftInStartingMonth = tempMySetDayMonth.getDate() - today_day;
+//             daysLeft += daysLeftInStartingMonth + mySetDay_day;
+//             if(daysLeft < 30){
+//                 console.log(daysLeft)
+//             }
+//             else{
+//                 console.log("not valid")
+//             }
+//         }
+//         else {
+//             console.log("not valid")
+//         }
+//         /*else {
+//             console.log(monthsLeftInYear);
+//             monthDuration = mySetDay_month - today_month;
+//             let end;
+//             let tempTodayMonth = today;
+//             tempTodayMonth.setMonth(today_month + 1, 0);
+//             let daysLeftInStartingMonth = tempTodayMonth.getDate() - today_day;
+//             for(let i = today_month + 1; i < mySetDay_month; i++){
+//                 today.setMonth(i+1,0);
+//                 end = today.getDate();
+//                 daysInMonth.push(end);
+//             }
+//             for(let i = 0; i < daysInMonth.length; i++){
+//                 daysLeft += daysInMonth[i];
+//             }
+//             console.log(daysLeftInStartingMonth )
+//             daysLeft += daysLeftInStartingMonth + mySetDay_day;
+//             if(daysLeft > 1 && daysLeft < 29){
+//                 console.log("allowed custom date")
+//             }
+//             else{
+//                 console.log("Not allowed date")
+//             }
+//             console.log(monthDuration);
+//             console.log(daysLeft)
+//         }  */
+//     }
+//     else{
+//         console.log("not valid")
+//     }
+// }
+// else{
+//     console.log("not valid");
+// }
+
+// if(mySetDay.getDate())
 
 
 
@@ -30,7 +114,7 @@ class AddProduct extends Component {
         usage: null,
         tab: 1,
         reminder: false,
-        time: 3000,
+        time: totalMilSec,
         client: null,
         email: null,
         reminderdate:null,
@@ -43,13 +127,20 @@ class AddProduct extends Component {
         fieldFiveValidated: "fieldNotValidated",
         fieldSixValidated: "fieldNotValidated",
         fieldSevenValidated: "fieldNotValidated",
+        fieldEightValidated: "fieldNotValidated",
+        fieldNineValidated: "fieldNotValidated",
+        fieldTenValidated: "fieldNotValidated",
         fieldOne: false,
         fieldTwo: false,
         fieldThree: false,
         fieldFour: false,
         fieldFive: false,
         fieldSix: false,
-        fieldSeven: false
+        fieldSeven: false,
+        fieldEight: false,
+        fieldNine: false,
+        fieldTen: false,
+        defaultReminder: true,
   }
 
   handleChange = (e) => {
@@ -67,6 +158,9 @@ class AddProduct extends Component {
       let fieldFiveValidated = this.state.fieldFiveValidated;
       let fieldSixValidated = this.state.fieldSixValidated;
       let fieldSevenValidated = this.state.fieldSevenValidated;
+      let fieldEightValidated = this.state.fieldEightValidated;
+      let fieldNineValidated = this.state.fieldNineValidated;
+      let fieldTenValidated = this.state.fieldTenValidated;
       let fieldOne = this.state.fieldOne;
       let fieldTwo = this.state.fieldTwo;
       let fieldThree = this.state.fieldThree;
@@ -74,6 +168,12 @@ class AddProduct extends Component {
       let fieldFive = this.state.fieldFive;
       let fieldSix = this.state.fieldSix;
       let fieldSeven = this.state.fieldSeven;
+      let fieldEight = this.state.fieldEight;
+      let fieldNine = this.state.fieldNine;
+      let fieldTen = this.state.fieldTen;
+      let customDateSet = false;
+
+
 
     //   inputValid = (e.target.attributes.name.value === "validationNeeded") ? true : false;
       if(e.target.id === "type"){
@@ -110,13 +210,141 @@ class AddProduct extends Component {
               setReminder = false;
           }
       }
+      let userCustomDate
+      if(e.target.id === "reminderdate"){
+        userCustomDate = e.target.value;
+        let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        let splittedDate = userCustomDate.split("-");
+        let selectedMonth = splittedDate[1];
+        selectedMonth = Number(selectedMonth);
+        splittedDate[1] = months[selectedMonth - 1];
+        let selectedDate = `${splittedDate[0]} ${splittedDate[1]} ${splittedDate[2]}`;
+        console.log(selectedMonth, splittedDate, selectedDate)
+        let mySetDay = new Date(selectedDate);
+        let today = new Date();
+        // let mySetDay = new Date("2021 May 31");
+        console.log(today)
+        console.log(mySetDay);
+        let today_day = today.getDate();
+        let mySetDay_day = mySetDay.getDate();
+        let today_month = today.getMonth();
+        let mySetDay_month = mySetDay.getMonth();
+        let today_year = today.getFullYear();
+        let mySetDay_year = mySetDay.getFullYear();
+        let monthDuration = null;
+        let daysInMonth = [];
+        let daysLeft = 0;
+
+        if((mySetDay_year - today_year >= 0) && (mySetDay_year - today_year <= 1)){
+            let tempMySetDayMonth = mySetDay;
+            (mySetDay_year - today_year > 0) ? tempMySetDayMonth.setMonth(0) : tempMySetDayMonth.setMonth(mySetDay_month);
+            let monthsLeftInYear = mySetDay_month - tempMySetDayMonth.getMonth();
+            if(monthsLeftInYear <= 0){
+                if((mySetDay_month == today_month) && (mySetDay_year - today_year == 0)){
+                    daysLeft = mySetDay_day - today_day;
+                    console.log(daysLeft);
+                    totalDys = daysLeft;
+                    totalMilSec = daysLeft * 24 * 60 * 60 * 1000
+                    if(daysLeft >= 1 && daysLeft < 30){
+                        customDateSet = true
+                        totalDys = daysLeft;
+                        totalMilSec = daysLeft * 24 * 60 * 60 * 1000;
+                    }
+                    else {customDateSet = false;}
+                }
+                else if(mySetDay_month == 0 && today_month == 11){
+
+                    let tempMySetDayMonth = today;
+                    tempMySetDayMonth.setMonth(today_month + 1, 0);
+                    let daysLeftInStartingMonth = tempMySetDayMonth.getDate() - today_day;
+                    daysLeft += daysLeftInStartingMonth + mySetDay_day;
+                    if(daysLeft < 30){
+                        console.log(daysLeft);
+                        customDateSet = true;
+                        totalDys = daysLeft;
+                        totalMilSec = daysLeft * 24 * 60 * 60 * 1000;
+                    }
+                    else{
+                        console.log("not valid");
+                        customDateSet = false;
+                    }
+                }
+                /* else {
+                    console.log("not valid");
+                    customDateSet = false;
+                } */
+                else {
+                    console.log(monthsLeftInYear);
+                    monthDuration = mySetDay_month - today_month;
+                    let end;
+                    let tempTodayMonth = today;
+                    tempTodayMonth.setMonth(today_month + 1, 0);
+                    let daysLeftInStartingMonth = tempTodayMonth.getDate() - today_day;
+                    for(let i = today_month + 1; i < mySetDay_month; i++){
+                        today.setMonth(i+1,0);
+                        end = today.getDate();
+                        daysInMonth.push(end);
+                    }
+                    for(let i = 0; i < daysInMonth.length; i++){
+                        daysLeft += daysInMonth[i];
+                    }
+                    console.log(daysLeftInStartingMonth )
+                    daysLeft += daysLeftInStartingMonth + mySetDay_day;
+                    if(daysLeft > 1 && daysLeft < 29){
+                        console.log(daysLeft);
+                        customDateSet = true;
+                        totalDys = daysLeft;
+                        totalMilSec = daysLeft * 24 * 60 * 60 * 1000;
+                    }
+                    else{
+                        console.log("Not valid");
+                        customDateSet = false;
+                    }
+                    /* console.log(monthDuration);
+                    console.log(daysLeft) */
+                } 
+            }
+            else{
+                console.log("not valid");
+                customDateSet = false;
+            }
+        }
+        else{
+            console.log("not valid");
+            customDateSet = false;
+        }
+        if(!customDateSet){
+            alert("Date not valid:\nEnter a day not more than 29 days from today")
+        }
+
+        console.log(customDateSet);
+        if(customDateSet){
+            setReminder = true;
+        }
+        else{
+            setReminder = false;
+        }
+        fieldEightValidated = (customDateSet) ? "fieldValidated" : "fieldNotValidated";
+        fieldEight = (customDateSet) ? true : false;
+      }
+      if(e.target.id === "client"){
+        fieldNineValidated = (target.length > 0) ? "fieldValidated" : "fieldNotValidated";
+        fieldNine = (target.length > 0) ? true : false;
+      }
+      if(e.target.id === "email"){
+        fieldTenValidated = (target.length > 0) ? "fieldValidated" : "fieldNotValidated";
+        fieldTen = (target.length > 0) ? true : false;
+      }
 
 /*       if(fieldOneValidated && fieldTwoValidated && fieldFourValidated && fieldFiveValidated && fieldSixValidated){
           importantInputFields = 1;
       } */
 
 
-      if(fieldOne && fieldTwo && fieldFour && fieldFive && fieldSix && fieldSeven){
+      if(fieldOne && fieldTwo && 
+        fieldFour && fieldFive && 
+        fieldSix && (fieldSeven || fieldEight) && 
+        fieldNine && fieldTen ){
         importantInputFields = true;
     }
 
@@ -140,12 +368,19 @@ class AddProduct extends Component {
         fieldFiveValidated: fieldFiveValidated,
         fieldSixValidated: fieldSixValidated,
         fieldSevenValidated: fieldSevenValidated,
+        fieldEightValidated: fieldEightValidated,
+        fieldNineValidated: fieldNineValidated,
+        fieldTenValidated: fieldTenValidated,
         fieldOne: fieldOne,
         fieldTwo: fieldTwo,
         fieldThree: fieldThree,
         fieldFour: fieldFour,
         fieldFive: fieldFive,
-        fieldSix: fieldSix
+        fieldSix: fieldSix,
+        fieldSeven: fieldSeven,
+        fieldEight: fieldEight,
+        fieldNine: fieldNine,
+        fieldTen: fieldTen
     })
     console.log(nextBtnDisabled)
   }
@@ -153,7 +388,6 @@ class AddProduct extends Component {
 handleSubmit =(e) => {
     e.preventDefault();
     //console.log(this.state);
-    this.props.addProduct(this.state);
     // let emailReminder;
     // let x = 1;
     if(!importantInputFields){
@@ -172,11 +406,10 @@ handleSubmit =(e) => {
       }, (error) => {
           console.log(error.text);
       });
-      e.target.reset();
-        alert(`You will get a reminder in ${totalDys/1000} seconds`);
         // window.open('mailto:test@example.com');
         // emailReminder = setInterval(countDown, 1000);
     }
+    e.target.reset();
 /*     let countDown = () => {
         this.setState(state=>({
             time : state.time - 1000
@@ -189,14 +422,73 @@ handleSubmit =(e) => {
     } */
     //sets the time email fxn will execute
     if(this.state.reminder){
-        setTimeout(createEmail, this.state.time);
+        alert(`You will get a reminder in ${totalDys} days or in ${totalMilSec} Milliseconds`);
+        // setTimeout(createEmail, this.state.time);
     }
+    this.setState({
+        fieldOneValidated: "",
+        fieldTwoValidated: "",
+        fieldThreeValidated: "",
+        fieldFourValidated: "",
+        fieldFiveValidated: "",
+        fieldSixValidated: "",
+        fieldSevenValidated: "",
+        fieldEightValidated: "",
+        fieldNineValidated: "",
+        fieldTenValidated: ""
+
+    })
 }
 
   handleClick = (e) => {
-    let target = e.target.innerText;
-    
+    let target = e.target.id;
+    let defaultReminder = this.state.defaultReminder;
+    let reminder30 = this.state.reminder30;
+    let noReminder30 = this.state.noReminder30;
+    let reminderdate = this.state.reminderdate;
+    let fieldSevenValidated = this.state.fieldSevenValidated;
+    let fieldEightValidated = this.state.fieldEightValidated;
+    let fieldSeven = this.state.fieldSeven;
+    let fieldEight = this.state.fieldEight;
     console.log(target);
+    console.log(this.state)
+
+    if(target === "noCustomise"){
+        defaultReminder = true;
+        reminderdate = "";
+        activeTab1 = "activeTab";
+        activeTab2 = "";
+        fieldEightValidated = "fieldNotValidated";
+        fieldEight = false;
+        this.setState({
+            reminderdate: reminderdate,
+            fieldEightValidated: fieldEightValidated,
+            fieldEight: fieldEight
+        })
+    }
+    else if(target === "customise"){
+        defaultReminder = false;
+        activeTab1 = "";
+        activeTab2 = "activeTab";
+        if(reminder30 !== ""){
+            reminder30 = "";
+        }
+        if(noReminder30 !== ""){
+            noReminder30 = "";
+        }
+        fieldSevenValidated = "fieldNotValidated";
+        fieldSeven =  false;
+        this.setState({
+            noReminder30: noReminder30,
+            reminder30: reminder30,
+            fieldSevenValidated: fieldSevenValidated,
+            fieldSeven: fieldSeven
+        })
+    }
+
+    this.setState({
+        defaultReminder: defaultReminder
+    })
     
   }
 
@@ -305,25 +597,35 @@ render(){
                     <div className="formBox tab3" style={this.state.tab === 3 ? {display : "block"}: {display : "none"}}>
                         <h2>Step 3</h2>
 
-                        <label htmlFor="name">Would you like to add a 30 day reminder?</label>
-                        <div name="product_reminder"  className={`reminder30 ${this.state.fieldSevenValidated}`}>
-                            <div className={`reminderBox`}>
-                                <input id="reminder30" onChange={this.handleChange} value="Yes" type="radio" name="allowReminder" />
-                                <label htmlFor="allowReminder">Yes</label>
+                        <label htmlFor="name">Would you like to add a 30 day reminder or set a custom date not later than 30 days?</label>
+                        <div className="reminderPicker">
+                            <div className={`noCustomise ${activeTab1}`} id="noCustomise" onClick={this.handleClick}>30day</div>
+                            <div className={`customise ${activeTab2}`} id="customise" onClick={this.handleClick}>Custom date</div>
+                        </div>
+                        <div className="emailReminder">
+                            <div name="product_reminder" className={`reminder30 ${this.state.fieldSevenValidated}`} style={this.state.defaultReminder ? {display: "flex"}:{display: "none"}} >
+                                <div className={`reminderBox`}>
+                                    <input id="reminder30" onChange={this.handleChange} value={this.state.defaultReminder ? "Yes" : ""} type="radio" name="allowReminder" />
+                                    <label htmlFor="allowReminder">Yes</label>
+                                </div>
+                                <div className={`reminderBox`}>
+                                    <input id="noReminder30" onChange={this.handleChange} value={this.state.defaultReminder ? "No" : ""} type="radio" name="allowReminder" />
+                                    <label htmlFor="allowReminder">No</label>
+                                </div>
+
                             </div>
-                            <div className={`reminderBox`}>
-                                <input id="noReminder30" onChange={this.handleChange} value="No" type="radio" name="allowReminder" />
-                                <label htmlFor="allowReminder">No</label>
+                            <div className="userReminderDate" style={!this.state.defaultReminder ? {display: "block"}:{display: "none"}}>
+                                <label htmlFor="name">When do you want to be reminded?</label>
+                                <input type="date" id="reminderdate" onChange={this.handleChange} value={!this.state.defaultReminder ? this.state.reminderdate: ""} className={`${this.state.fieldEightValidated}`}/>
                             </div>
                         </div>
-                        <div style={{textAlign: "center"}}>___________ OR ____________</div>
-                        <div style={{textAlign: "center"}}>Set a custom date not later than 30 days</div>
-                        <label htmlFor="name">When do you want to be reminded?</label>
-                        <input type="date" id="reminderdate" onChange={this.handleChange}/>
+                       {/*  <div style={{textAlign: "center"}}>___________ OR ____________</div>
+                        <div style={{textAlign: "center"}}>Set a custom date not later than 30 days</div>*/}                    
+                        
                         <label htmlFor="name">Please enter your name:</label>
-                        <input type="text" id="client" name="user_name" onChange={this.handleChange}/>
+                        <input type="text" id="client" name="user_name" onChange={this.handleChange} className={`${this.state.fieldNineValidated}`}/>
                         <label htmlFor="name">Please enter your e-mail:</label>
-                        <input type="text" id="email" name="user_email" onChange={this.handleChange}/>
+                        <input type="text" id="email" name="user_email" onChange={this.handleChange} className={`${this.state.fieldTenValidated}`}/>
                         <br/>
                     </div>    
                         
