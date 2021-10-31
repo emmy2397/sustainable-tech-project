@@ -144,8 +144,9 @@ nav {
 }
 
 #successPlant {
-    padding-left: 30%;
+    padding-left: 33%;
     padding-top: 5%;
+    width: 30%;
 }
 
 /* Three image containers (use 25% for four, and 50% for two, etc) */
